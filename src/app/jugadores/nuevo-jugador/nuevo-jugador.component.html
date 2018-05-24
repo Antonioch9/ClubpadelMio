@@ -59,7 +59,7 @@
   <div class="row">
     <div class="col-md-12 ">
 
-      <form>
+      <form #formDato="ngForm" (ngSubmit)="guardarFormulario()"> 
         <div class="row">
           <div class="col">
             <h4>Datos del Jugador</h4>
@@ -91,7 +91,7 @@
               <div class="form-group">
                 <label for="nacionalidad">Nacionalidad</label>
                 <select class="form-control" name="nacionalidad" ngModel>
-                  <option *ngFor="let nacionalidad of nacionalidades" value="nacionalidad">
+                  <option *ngFor="let nacionalidad of nacionalidades" [value]="nacionalidad">
                     {{nacionalidad}}
                   </option>
                 </select>
@@ -108,7 +108,7 @@
               <div class="col-md-4">
                 <label for="nivel">Nivel de Juego</label>
                 <select class="form-control" name="nivel" ngModel>
-                  <option *ngFor="let nivel of niveles" value="nivel">
+                  <option *ngFor="let nivel of niveles" [value]="nivel">
                     {{nivel}}
                   </option>
                 </select>
@@ -143,24 +143,24 @@
                 </button>
               </h5>
             </div>
-
+            
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
               <div class="card-body">
-                <form action="/action_page.php" method="get">
+               
                   <p>
                     <strong>Servicios Disponibles </strong>
                   </p>
-                  <input type="checkbox" name="vehicle" value="Bike"> Socio Gimnasio
+                  <inputtype="checkbox"  name="vehicle" value="gimnasio"> Socio Gimnasio
                   <br>
-                  <input type="checkbox" name="vehicle" value="Car"> Socio Padel
+                  <input type="checkbox" name="vehicle" value="padel"> Socio Padel
                   <br>
-                  <input type="checkbox" name="vehicle" value="Car"> Socio Padel y Gimnasio
+                  <input type="checkbox" name="vehicle" value="padelGimnasio"> Socio Padel y Gimnasio
                   <br>
-                  <button class="btn btn-success verde" type="submit" value="Añadir servicios">
+                  <button class="btn btn-success verde" type="submit">
                     Añadir servicio
                   </button>
 
-                </form>
+                
               </div>
             </div>
           </div>
@@ -207,3 +207,5 @@
     </div>
   </div>
 </div>
+
+ 
