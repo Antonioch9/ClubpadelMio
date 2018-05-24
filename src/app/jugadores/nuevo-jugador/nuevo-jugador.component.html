@@ -1,0 +1,209 @@
+<div class="global">
+  <div id="wrapper" class="toggled">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand" routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
+          <a routerLink="/">
+            Padel Marbella
+          </a>
+        </li>
+        <li routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
+          <a routerLink="/">Home</a>
+        </li>
+        <li routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
+          <a routerLink="/listado-jugador">Jugadores</a>
+        </li>
+        <li>
+          <a href="#">Overview</a>
+        </li>
+        <li>
+          <a href="#">Events</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Services</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="cabecera">
+    <nav class="navbar navbar-expand-md navbar-black bg-black mb-4 " style="background-color: #000;color: #999999; height: 50px;margin-left: -10px;;">
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+
+      </div>
+    </nav>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a routerLink="/" [routerLinkActive]="['router-link-active']">Inicio</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Nuevo Jugador</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+<div class="cabecera">
+
+  <div class="row">
+    <div class="col-md-12 ">
+
+      <form>
+        <div class="row">
+          <div class="col">
+            <h4>Datos del Jugador</h4>
+            <div class="col-md-8 ">
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" placeholder="Nombre" name="nombre" ngModel>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="form-group">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" class="form-control" placeholder="Apellidos" name="apellidos" ngModel>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="form-group">
+                <label for="dni">DNI</label>
+                <input type="text" class="form-control" placeholder="dni" name="dni" ngModel>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="form-group">
+                <label for="pasaporte">Pasaporte</label>
+                <input type="text" class="form-control" placeholder="pasaporte" name="pasaporte" ngModel>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="form-group">
+                <label for="nacionalidad">Nacionalidad</label>
+                <select class="form-control" name="nacionalidad" ngModel>
+                  <option *ngFor="let nacionalidad of nacionalidades" value="nacionalidad">
+                    {{nacionalidad}}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <form>
+              <input type="file" (change)="preview($event)" accept="image/">
+              <br>
+              <canvas #myCanvas style="width:300px; height: 300px;border: 1px solid red"></canvas>
+            </form>
+            <div class="row" style="margin-top: 30px;">
+              <div class="col-md-4">
+                <label for="nivel">Nivel de Juego</label>
+                <select class="form-control" name="nivel" ngModel>
+                  <option *ngFor="let nivel of niveles" value="nivel">
+                    {{nivel}}
+                  </option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="id">Id</label>
+                <input type="text" class="form-control" placeholder="id" name="id" ngModel>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label for="numeroTarjeta">Nº de tarjeta</label>
+                <input type="number" class="form-control" placeholder="numeroTarjeta" name="numeroTarjeta" ngModel>
+              </div>
+              <div class="col-md-4">
+                <label for="numeroUsuario">Nº de Usuario</label>
+                <input type="number" class="form-control" placeholder="numeroUsuario" name="numeroUsuario" ngModel>
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+        <hr>
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  MATRICULAS
+                </button>
+              </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                <form action="/action_page.php" method="get">
+                  <p>
+                    <strong>Servicios Disponibles </strong>
+                  </p>
+                  <input type="checkbox" name="vehicle" value="Bike"> Socio Gimnasio
+                  <br>
+                  <input type="checkbox" name="vehicle" value="Car"> Socio Padel
+                  <br>
+                  <input type="checkbox" name="vehicle" value="Car"> Socio Padel y Gimnasio
+                  <br>
+                  <button class="btn btn-success verde" type="submit" value="Añadir servicios">
+                    Añadir servicio
+                  </button>
+
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  ACCESO A VESTUARIOS
+                </button>
+              </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                <form action="/action_page.php" method="get">
+                  <p>
+                    <strong>Servicios Disponibles </strong>
+                  </p>
+                  <input type="checkbox" name="vehicle" value="Car"> Bonos Gimnasio
+                  <br>
+                  <input type="checkbox" name="vehicle" value="Car"> Bono masaje 1 hora
+                  <br>
+                  <input type="checkbox" name="vehicle" value="Car"> Bono Padel
+                  <br>
+                  <button class="btn btn-success verde" type="submit" value="Añadir servicios">
+                    Añadir servicio
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div style=" width: 100%">
+          <div style="padding-left: 80%;display: inline;">
+            <button type="submit" class="btn btn-primary" style="margin: 5px;">Añadir Datos</button>
+            <button class="btn btn-danger" routerLink="/">Volver</button>
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>

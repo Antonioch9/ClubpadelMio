@@ -1,0 +1,75 @@
+<div class="global">
+    <div id="wrapper" class="toggled">
+  
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand" routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
+            <a routerLink="/">
+              Padel Marbella
+            </a>
+          </li>
+          <li routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
+            <a routerLink="/">Home</a>
+          </li>
+          <li routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
+            <a routerLink="nuevo-jugador">Jugadores</a>
+          </li>
+          <li>
+            <a href="#">Overview</a>
+          </li>
+          <li>
+            <a href="#">Events</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Services</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="cabecera">
+      <nav class="navbar navbar-expand-md navbar-black bg-black mb-4 " style="background-color: #000;color: #999999; height: 50px;margin-left: -10px;;">
+  
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+  
+        </div>
+      </nav>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']">Inicio</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Nuevo Jugador</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+<div class="col-md-12  cabecera" style="display: flex;justify-content: space-between">
+    <h4>Crear nuevo Jugador</h4>
+    <button class="btn btn-primary" routerLink="/nuevo-jugador"><i class="fas fa-plus"></i></button>
+  </div>
+  <div class="col-md-12 cabecera">
+    <table class="table table-bordered table-striped">
+      <tr>
+        <th>Nombre</th>
+        <th>apellidos</th>
+        <th>Pagado</th>
+        <th>botones</th>
+      </tr>
+      <!-- <tr *ngFor="let proveedor of proveedores">
+        <td>{{proveedor.nombre}}</td>
+        <td>{{proveedor.cif}}</td>
+        <td>{{proveedor.localidad}}</td>
+      </tr> -->
+    </table>
+  </div>
