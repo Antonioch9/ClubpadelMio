@@ -1,0 +1,35 @@
+.titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.titulo span {
+    font-size: 20px;
+}
+
+.formulario {
+    padding: 20px 20px 40px;
+}
+
+.formulario .row {
+    padding: 10px 0;
+}
+
+.radiobotones {
+    padding-top: 26px;
+}
+
+.valido {
+    color: green;
+}
+
+.no-valido {
+    color: crimson;
+}
+.fondo{
+    background-image: url(../../../assets/img/logowebpeq2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}

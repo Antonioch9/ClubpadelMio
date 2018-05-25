@@ -1,0 +1,24 @@
+<h4>Transfer custom data in Drag-and-Drop</h4>
+<div class="row">
+    <div class="col-sm-3">
+        <div class="panel panel-success" >
+            <div class="panel-heading" >Available to drag</div>
+            <div class="panel-body" style="border:solid 1px red">
+                <div class="panel panel-default" dnd-draggable [dragEnabled]="true" [dragData]="transferData" style="border:solid 1px blue">
+                    <div class="panel-body">
+                        <div>Drag Me</div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div dnd-droppable class="panel panel-info" (onDropSuccess)="transferDataSuccess($event)" style="border:solid 1px teal">
+            <div class="panel-heading">Place to drop (Items:{{receivedData.length}})</div>
+            <div class="panel-body"style="border:solid 1px red" >
+                <div [hidden]="!receivedData.length > 0" *ngFor="let data of receivedData">{{data | json}}</div>
+            </div>
+        </div>
+    </div>
+</div>

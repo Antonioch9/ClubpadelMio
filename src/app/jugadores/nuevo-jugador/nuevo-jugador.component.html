@@ -15,7 +15,7 @@
         <li routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
           <a routerLink="/listado-jugador">Jugadores</a>
         </li>
-        <li>
+        <!-- <li>
           <a href="#">Overview</a>
         </li>
         <li>
@@ -29,7 +29,7 @@
         </li>
         <li>
           <a href="#">Contact</a>
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>
@@ -47,7 +47,7 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a routerLink="/" [routerLinkActive]="['router-link-active']">Inicio</a>
+          <a routerLink="/">Inicio</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">Nuevo Jugador</li>
       </ol>
@@ -58,154 +58,178 @@
 
   <div class="row">
     <div class="col-md-12 ">
+      <div class="formulario">
+        <form [formGroup]="formJug" #formDato="ngForm" (ngSubmit)="guardarFormulario()">
+          <div class="row">
+            <div class="col">
+              <h4>Datos del Jugador</h4>
+              <div class="col-md-8 ">
+                <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <span *ngIf="formJug.controls.nombre.valid &&
+                        formJug.controls.nombre.dirty">
+                    <i class="fas fa-check-circle valido"></i>
+                  </span>
+                  <span class="carmesi" *ngIf="formJug.controls.nombre.invalid &&
+                          formJug.controls.nombre.touched">
+                    <i class="fas fa-times-circle no-valido"></i>
+                    El campo es obligatorio
+                  </span>
+                  <input type="text" class="form-control" placeholder="Nombre" name="nombre" formControlName="nombre">
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="form-group">
+                  <label for="apellidos">Apellidos</label>
+                  <span *ngIf="formJug.controls.apellidos.valid &&
+                        formJug.controls.apellidos.dirty">
+                    <i class="fas fa-check-circle valido"></i>
+                  </span>
+                  <span class="carmesi" *ngIf="formJug.controls.apellidos.invalid &&
+                          formJug.controls.apellidos.touched">
+                    <i class="fas fa-times-circle no-valido"></i>
+                    El campo es obligatorio
+                  </span>
+                  <input type="text" class="form-control" placeholder="Apellidos" name="apellidos" formControlName="apellidos">
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="form-group">
+                  <label for="dni">DNI</label>
+                  <span *ngIf="formJug.controls.dni.valid &&
+                        formJug.controls.dni.dirty">
+                    <i class="fas fa-check-circle valido"></i>
+                  </span>
+                  <span class="carmesi" *ngIf="formJug.controls.dni.invalid &&
+                          formJug.controls.dni.touched">
+                    <i class="fas fa-times-circle no-valido"></i>
+                    El campo es obligatorio
+                  </span>
+                  <span class="carmesi" *ngIf="formJug.controls.dni.invalid &&
+                        formJug.controls.dni.dirty &&
+                        formJug.value.dni">
+                    <i class="fas fa-times-circle no-valido"></i>
+                    El campo debe tener 9 caracteres
+                  </span>
+                  <input type="text" class="form-control" formControlName="dni" [(ngModel)]="formJug.value.dni" maxlength="9" placeholder="0000000X" name="dni" pattern="[A-Za-z0-9]+" >
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="form-group">
+                  <label for="pasaporte">Pasaporte</label>
+                  <input type="text" class="form-control" placeholder="pasaporte" formControlName="pasaporte" name="pasaporte" >
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="form-group">
+                  <label for="nacionalidad">Nacionalidad</label>
+                  <select class="form-control" name="nacionalidad" formControlName="nacionalidad">
+                    <option *ngFor="let nacionalidad of nacionalidades" [value]="nacionalidad">
+                      {{nacionalidad}}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <form >
+                <input style="border: none" type="file" (change)="preview($event)" accept="image/">
+                <br>
+                
+                <canvas class="fondo"  #myCanvas style="width:300px; height: 300px;border: 1px solid red"></canvas>
+              </form>
+              <div class="row" style="margin-top: 30px;">
+                <div class="col-md-4">
+                  <label for="nivel">Nivel de Juego</label>
+                  <select class="form-control" name="nivel" formControlName="nivel">
+                    <option *ngFor="let nivel of niveles" [value]="nivel">
+                      {{nivel}}
+                    </option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label for="id">Id</label>
+                  <input type="text" class="form-control" placeholder="id" name="id" formControlName="id">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <label for="numeroTarjeta">Nº de tarjeta</label>
+                  <input type="number" class="form-control" placeholder="numeroTarjeta" name="numeroTarjeta" formControlName="numeroTarjeta">
+                </div>
+                <div class="col-md-4">
+                  <label for="numeroUsuario">Nº de Usuario</label>
+                  <input type="number" class="form-control" placeholder="numeroUsuario" name="numeroUsuario" formControlName="numeroUsuario">
+                </div>
+              </div>
 
-      <form #formDato="ngForm" (ngSubmit)="guardarFormulario()"> 
-        <div class="row">
-          <div class="col">
-            <h4>Datos del Jugador</h4>
-            <div class="col-md-8 ">
-              <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" placeholder="Nombre" name="nombre" ngModel>
-              </div>
             </div>
-            <div class="col-md-8">
-              <div class="form-group">
-                <label for="apellidos">Apellidos</label>
-                <input type="text" class="form-control" placeholder="Apellidos" name="apellidos" ngModel>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <div class="form-group">
-                <label for="dni">DNI</label>
-                <input type="text" class="form-control" placeholder="dni" name="dni" ngModel>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <div class="form-group">
-                <label for="pasaporte">Pasaporte</label>
-                <input type="text" class="form-control" placeholder="pasaporte" name="pasaporte" ngModel>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <div class="form-group">
-                <label for="nacionalidad">Nacionalidad</label>
-                <select class="form-control" name="nacionalidad" ngModel>
-                  <option *ngFor="let nacionalidad of nacionalidades" [value]="nacionalidad">
-                    {{nacionalidad}}
-                  </option>
-                </select>
-              </div>
-            </div>
+
+
           </div>
-          <div class="col">
-            <form>
-              <input type="file" (change)="preview($event)" accept="image/">
-              <br>
-              <canvas #myCanvas style="width:300px; height: 300px;border: 1px solid red"></canvas>
-            </form>
-            <div class="row" style="margin-top: 30px;">
-              <div class="col-md-4">
-                <label for="nivel">Nivel de Juego</label>
-                <select class="form-control" name="nivel" ngModel>
-                  <option *ngFor="let nivel of niveles" [value]="nivel">
-                    {{nivel}}
-                  </option>
-                </select>
+          <hr>
+          <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    MATRICULAS
+                  </button>
+                </h5>
               </div>
-              <div class="col-md-4">
-                <label for="id">Id</label>
-                <input type="text" class="form-control" placeholder="id" name="id" ngModel>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
-                <label for="numeroTarjeta">Nº de tarjeta</label>
-                <input type="number" class="form-control" placeholder="numeroTarjeta" name="numeroTarjeta" ngModel>
-              </div>
-              <div class="col-md-4">
-                <label for="numeroUsuario">Nº de Usuario</label>
-                <input type="number" class="form-control" placeholder="numeroUsuario" name="numeroUsuario" ngModel>
-              </div>
-            </div>
 
-          </div>
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
 
-
-        </div>
-        <hr>
-        <div class="accordion" id="accordionExample">
-          <div class="card">
-            <div class="card-header" id="headingOne">
-              <h5 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  MATRICULAS
-                </button>
-              </h5>
-            </div>
-            
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-              <div class="card-body">
-               
                   <p>
                     <strong>Servicios Disponibles </strong>
                   </p>
-                  <inputtype="checkbox"  name="vehicle" value="gimnasio"> Socio Gimnasio
+                  <input type="checkbox" name="vehicle" [value]="gimnasio"> Socio Gimnasio
                   <br>
                   <input type="checkbox" name="vehicle" value="padel"> Socio Padel
                   <br>
                   <input type="checkbox" name="vehicle" value="padelGimnasio"> Socio Padel y Gimnasio
                   <br>
-                  <button class="btn btn-success verde" type="submit">
-                    Añadir servicio
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    ACCESO A VESTUARIOS
                   </button>
-
-                
+                </h5>
+              </div>
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  <form action="/action_page.php" method="get">
+                    <p>
+                      <strong>Servicios Disponibles </strong>
+                    </p>
+                    <input type="checkbox" name="vehicle" value="Car"> Bonos Gimnasio
+                    <br>
+                    <input type="checkbox" name="vehicle" value="Car"> Bono masaje 1 hora
+                    <br>
+                    <input type="checkbox" name="vehicle" value="Car"> Bono Padel
+                    <br>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-header" id="headingOne">
-              <h5 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  ACCESO A VESTUARIOS
-                </button>
-              </h5>
-            </div>
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-              <div class="card-body">
-                <form action="/action_page.php" method="get">
-                  <p>
-                    <strong>Servicios Disponibles </strong>
-                  </p>
-                  <input type="checkbox" name="vehicle" value="Car"> Bonos Gimnasio
-                  <br>
-                  <input type="checkbox" name="vehicle" value="Car"> Bono masaje 1 hora
-                  <br>
-                  <input type="checkbox" name="vehicle" value="Car"> Bono Padel
-                  <br>
-                  <button class="btn btn-success verde" type="submit" value="Añadir servicios">
-                    Añadir servicio
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
 
 
-        <div style=" width: 100%">
-          <div style="padding-left: 80%;display: inline;">
-            <button type="submit" class="btn btn-primary" style="margin: 5px;">Añadir Datos</button>
-            <button class="btn btn-danger" routerLink="/">Volver</button>
+          <div style=" width: 100%">
+            <div style="padding-left: 80%;display: inline;">
+              <button type="submit" class="btn btn-primary" style="margin: 5px;">Añadir Datos</button>
+              <button class="btn btn-danger" routerLink="/">Volver</button>
+            </div>
+
           </div>
 
-        </div>
-
-      </form>
-
+        </form>
+      </div>
     </div>
   </div>
 </div>
-
- 

@@ -4,15 +4,15 @@
   <!-- Sidebar -->
   <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
-          <li class="sidebar-brand" routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
+          <li class="sidebar-brand">
               <a routerLink="/">
                   Padel Marbella
               </a>
           </li>
-          <li routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
+          <li>
               <a routerLink="/">Home</a>
           </li>
-          <li routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
+          <li>
               <a routerLink="listado-jugador">Jugadores</a>
           </li>
           <li>
@@ -46,31 +46,30 @@
   <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
           <li class="breadcrumb-item">
-              <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']">Inicio</a>
+              <a routerLink="/" >Inicio</a>
           </li>
-          <li class="breadcrumb-item active" aria-current="page">Reservar</li>
       </ol>
   </nav>
   
 </div>
 </div>
 <div style="display: flex; position: absolute;">
-    <div style="display: flex; flex-direction: row; justify-content: space-between; width: 75%;flex-wrap: wrap; overflow: auto;">
+    <div style="padding-left: 300px; display: flex; flex-direction: row; justify-content: space-around; width: 75%;flex-wrap: wrap; overflow: auto;">
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
                 <p>My Guide Marbella</p>
             </div>
-            <div style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;border: 1px solid red;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div class="jugador" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+            <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+                <div [hidden]="!receivedData.length > 0"  class="jugador" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
 
@@ -81,36 +80,36 @@
                         <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                     </div>
                 </div>
-                <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00" min="2018-05-23T08:00:00" step="1800">
+                <input class="largo" type="datetime-local" name="fechayhora"  min="2018-05-23T08:00:00" step="1800">
                 <br>
                 <div class="input-group mb-2 centrado">
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                     </div>
                 </div>
-                <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00" min="2018-05-23T08:00:00" step="1800">
+                <input class="largo" type="datetime-local" name="fechayhora"  min="2018-05-23T08:00:00" step="1800">
 
             </div>
 
             <div class="botones">
-                <button class="btn btn-success"[routerLink]="['/blank-page']" [routerLinkActive]="['router-link-active']">reservar</button>
+                <button class="btn btn-success"routerLink="/listado-reservas">reservar</button>
             </div>
         </div>
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
                 <p>La Habana</p>
             </div>
-            <div style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;border: 1px solid red;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+            <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
 
@@ -133,24 +132,24 @@
             </div>
 
             <div class="botones">
-                <button class="btn btn-success">reservar</button>
+                <button class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
             </div>
         </div>
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
                 <p>Royale Grass</p>
             </div>
-            <div style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;border: 1px solid red;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+            <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
 
@@ -173,24 +172,24 @@
             </div>
 
             <div class="botones">
-                <button class="btn btn-success">reservar</button>
+                <button class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
             </div>
         </div>
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
                 <p>Da Bruno</p>
             </div>
-            <div style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;border: 1px solid red;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+            <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0"style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
 
@@ -213,24 +212,24 @@
             </div>
 
             <div class="botones">
-                <button class="btn btn-success">reservar</button>
+                <button class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
             </div>
         </div>
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
                 <p>Fanautic Club</p>
             </div>
-            <div style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;border: 1px solid red;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+            <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+                <div  [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
 
@@ -253,24 +252,24 @@
             </div>
 
             <div class="botones">
-                <button class="btn btn-success">reservar</button>
+                <button class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
             </div>
         </div>
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
                 <p>X-Magazine</p>
             </div>
-            <div style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;border: 1px solid red;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+            <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+                <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
 
@@ -293,24 +292,24 @@
             </div>
 
             <div class="botones">
-                <button class="btn btn-success">reservar</button>
+                <button class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
             </div>
         </div>
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
                 <p>Cuisin Electro</p>
             </div>
-            <div style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;border: 1px solid red;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+            <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
 
@@ -333,24 +332,24 @@
             </div>
 
             <div class="botones">
-                <button class="btn btn-success">reservar</button>
+                <button class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
             </div>
         </div>
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
                 <div class="letra">
                     <p>Optimasit</p>
                 </div>
-                <div style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;border: 1px solid red;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+                    <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
     
                     </div>
-                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                    <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
     
                     </div>
-                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                    <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
     
                     </div>
-                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                    <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
     
                     </div>
     
@@ -373,24 +372,24 @@
             </div>
                 
                 <div class="botones">
-                    <button class="btn btn-success">reservar</button>
+                    <button class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
                 </div>
             </div>
             <div style="border: solid 3px green;height: 600px;" class="tarjeta">
                     <div class="letra">
                         <p>Heaven Beach Club</p>
                     </div>
-                    <div style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;border: 1px solid red;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                        <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                    <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+                        <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
         
                         </div>
-                        <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                        <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
         
                         </div>
-                        <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                        <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
         
                         </div>
-                        <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                        <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
         
                         </div>
         
@@ -413,24 +412,24 @@
                 </div>
                     
                     <div class="botones">
-                        <button class="btn btn-success">reservar</button>
+                        <button class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
                     </div>
                 </div>
                 <div style="border: solid 3px green;height: 600px;" class="tarjeta">
                         <div class="letra">
                             <p>Estrella Dawn</p>
                         </div>
-                        <div style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;border: 1px solid red;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                            <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                        <div  dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+                            <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
             
                             </div>
-                            <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                            <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
             
                             </div>
-                            <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                            <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
             
                             </div>
-                            <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                            <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
             
                             </div>
             
@@ -453,7 +452,7 @@
                     </div>
                         
                         <div class="botones">
-                            <button class="btn btn-success">reservar</button>
+                            <button class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
                         </div>
                     </div>
     </div>
@@ -473,29 +472,29 @@
             </div>
             <div style="overflow: auto; border: solid  1px black;background-color:#222;color: white; width:100%;height: 60vh;">
                 <ul style="list-style: none;margin-top: 20px;">
-                    <li>
-                        <img src="../../assets/img/fotos-5x5-cm-visa-estados-unidos-eeuu-y-otros-6-fotos-carnet-D_NQ_NP_23142-MLA20241872874_022015-F.jpg" style="width:25px;height: 30px;" alt=""> Gloria Sánchez
+                    <li   >
+                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/fotos-5x5-cm-visa-estados-unidos-eeuu-y-otros-6-fotos-carnet-D_NQ_NP_23142-MLA20241872874_022015-F.jpg" style="width:25px;height: 30px;" alt=""> Gloria Sánchez
                     </li>
                     <li>
-                        <img src="../../assets/img/520191091.jpg" style="width:25px;height: 30px;" alt=""> Alberto Sánchez
+                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/520191091.jpg" style="width:25px;height: 30px;" alt=""> Alberto Sánchez
                     </li>
                     <li>
-                        <img src="../../assets/img/foto-carnet (1).jpg" style="width:25px;height: 30px;" alt=""> Ronaldo Vivas
+                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/foto-carnet (1).jpg" style="width:25px;height: 30px;" alt=""> Ronaldo Vivas
                     </li>
                     <li>
-                        <img src="../../assets/img/descarga.jpg" style="width:25px;height: 30px;" alt=""> Luis Pérez
+                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/descarga.jpg" style="width:25px;height: 30px;" alt=""> Luis Pérez
                     </li>
                     <li>
-                        <img src="../../assets/img/fotos-5x5-cm-visa-estados-unidos-eeuu-y-otros-6-fotos-carnet-D_NQ_NP_23142-MLA20241872874_022015-F.jpg" style="width:25px;height: 30px;" alt=""> Sergio López
+                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/fotos-5x5-cm-visa-estados-unidos-eeuu-y-otros-6-fotos-carnet-D_NQ_NP_23142-MLA20241872874_022015-F.jpg" style="width:25px;height: 30px;" alt=""> Sergio López
                     </li>
                     <li>
-                        <img src="../../assets/img/fotos-5x5-cm-visa-estados-unidos-eeuu-y-otros-6-fotos-carnet-D_NQ_NP_23142-MLA20241872874_022015-F.jpg" style="width:25px;height: 30px;" alt=""> Juan Carlos Hernández
+                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/fotos-5x5-cm-visa-estados-unidos-eeuu-y-otros-6-fotos-carnet-D_NQ_NP_23142-MLA20241872874_022015-F.jpg" style="width:25px;height: 30px;" alt=""> Juan Carlos Hernández
                     </li>
                     <li>
-                        <img src="../../assets/img/fotos-5x5-cm-visa-estados-unidos-eeuu-y-otros-6-fotos-carnet-D_NQ_NP_23142-MLA20241872874_022015-F.jpg" style="width:25px;height: 30px;" alt=""> Amanda García
+                        <img  dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/fotos-5x5-cm-visa-estados-unidos-eeuu-y-otros-6-fotos-carnet-D_NQ_NP_23142-MLA20241872874_022015-F.jpg" style="width:25px;height: 30px;" alt=""> Amanda García
                     </li>
                     <li>
-                        <img src="../../assets/img/fotos-5x5-cm-visa-estados-unidos-eeuu-y-otros-6-fotos-carnet-D_NQ_NP_23142-MLA20241872874_022015-F.jpg" style="width:25px;height: 30px;" alt=""> Juan Ramon Pardo
+                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/fotos-5x5-cm-visa-estados-unidos-eeuu-y-otros-6-fotos-carnet-D_NQ_NP_23142-MLA20241872874_022015-F.jpg" style="width:25px;height: 30px;" alt=""> Juan Ramon Pardo
                     </li>
 
                 </ul>
