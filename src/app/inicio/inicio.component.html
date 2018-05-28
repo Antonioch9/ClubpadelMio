@@ -16,9 +16,9 @@
               <a routerLink="listado-jugador">Jugadores</a>
           </li>
           <li>
-              <a href="#">Overview</a>
+              <a routerLink="listado-reservas">Listado de Reservas</a>
           </li>
-          <li>
+          <!-- <li>
               <a href="#">Events</a>
           </li>
           <li>
@@ -29,7 +29,7 @@
           </li>
           <li>
               <a href="#">Contact</a>
-          </li>
+          </li> -->
       </ul>
   </div>
 </div>
@@ -56,8 +56,11 @@
 <div style="display: flex; position: absolute;">
     <div style="padding-left: 300px; display: flex; flex-direction: row; justify-content: space-around; width: 75%;flex-wrap: wrap; overflow: auto;">
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
+            
+
+
             <div class="letra">
-                <p>My Guide Marbella</p>
+                <p >{{titulo.p1}}</p>
             </div>
             <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
                 <div [hidden]="!receivedData.length > 0"  class="jugador" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
@@ -80,7 +83,7 @@
                         <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                     </div>
                 </div>
-                <input class="largo" type="datetime-local" name="fechayhora"  min="2018-05-23T08:00:00" step="1800">
+                <input class="largo" type="datetime" name="fechayhora"  min="2018-05-23T08:00:00" step="1800">
                 <br>
                 <div class="input-group mb-2 centrado">
                     <div class="input-group-prepend">
@@ -92,12 +95,13 @@
             </div>
 
             <div class="botones">
-                <button class="btn btn-success"routerLink="/listado-reservas">reservar</button>
+                <button  type="submit"  class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
             </div>
         </div>
+    
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
-                <p>La Habana</p>
+                <p>{{titulo.p2}}</p>
             </div>
             <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
                 <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
@@ -110,6 +114,46 @@
 
                 </div>
                 <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                </div>
+
+            </div>
+            <div class="fechas">
+                    <div class="input-group mb-2 centrado">
+                        <div class="input-group-prepend ">
+                            <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
+                        </div>
+                    </div>
+                    <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00" min="2018-05-23T08:00:00" step="1800">
+                    <br>
+                    <div class="input-group mb-2 centrado">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Salida</label>
+                        </div>
+                    </div>
+                    <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00" min="2018-05-23T08:00:00" step="1800">
+    
+                </div>
+
+            <div class="botones">
+                <button class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
+            </div>
+        </div>
+        <div style="border: solid 3px green;height: 600px;" class="tarjeta">
+            <div class="letra">
+                <p>{{titulo.p3}}</p>
+            </div>
+            <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                </div>
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                </div>
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                </div>
+                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
 
@@ -137,47 +181,7 @@
         </div>
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
-                <p>Royale Grass</p>
-            </div>
-            <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-
-            </div>
-            <div class="fechas">
-                <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend ">
-                        <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
-                    </div>
-                </div>
-                <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00" min="2018-05-23T08:00:00" step="1800">
-                <br>
-                <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Salida</label>
-                    </div>
-                </div>
-                <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00" min="2018-05-23T08:00:00" step="1800">
-
-            </div>
-
-            <div class="botones">
-                <button class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
-            </div>
-        </div>
-        <div style="border: solid 3px green;height: 600px;" class="tarjeta">
-            <div class="letra">
-                <p>Da Bruno</p>
+                <p>{{titulo.p4}}</p>
             </div>
             <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
                 <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
@@ -217,7 +221,7 @@
         </div>
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
-                <p>Fanautic Club</p>
+                <p>{{titulo.p5}}</p>
             </div>
             <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
                 <div  [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
@@ -257,7 +261,7 @@
         </div>
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
-                <p>X-Magazine</p>
+                <p>{{titulo.p6}}</p>
             </div>
             <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
                 <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
@@ -297,7 +301,7 @@
         </div>
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
-                <p>Cuisin Electro</p>
+                <p>{{titulo.p7}}</p>
             </div>
             <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
                 <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
@@ -337,7 +341,7 @@
         </div>
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
                 <div class="letra">
-                    <p>Optimasit</p>
+                    <p>{{titulo.p8}}</p>
                 </div>
                 <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
                     <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
@@ -377,7 +381,7 @@
             </div>
             <div style="border: solid 3px green;height: 600px;" class="tarjeta">
                     <div class="letra">
-                        <p>Heaven Beach Club</p>
+                        <p>{{titulo.p9}}</p>
                     </div>
                     <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
                         <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
@@ -417,7 +421,7 @@
                 </div>
                 <div style="border: solid 3px green;height: 600px;" class="tarjeta">
                         <div class="letra">
-                            <p>Estrella Dawn</p>
+                            <p>{{titulo.p10}}</p>
                         </div>
                         <div  dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
                             <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">

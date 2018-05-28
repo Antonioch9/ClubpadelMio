@@ -15,9 +15,10 @@
         <li routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
           <a routerLink="/listado-jugador">Jugadores</a>
         </li>
-        <!-- <li>
-          <a href="#">Overview</a>
+       <li>
+          <a routerLink="/listado-reservas">Lista de reservas</a>
         </li>
+        <!--
         <li>
           <a href="#">Events</a>
         </li>
@@ -155,11 +156,11 @@
               <div class="row">
                 <div class="col-md-4">
                   <label for="numeroTarjeta">Nº de tarjeta</label>
-                  <input type="number" class="form-control" placeholder="numeroTarjeta" name="numeroTarjeta" formControlName="numeroTarjeta">
+                  <input type="number" class="form-control" placeholder="numero de Tarjeta" name="numeroTarjeta" formControlName="numeroTarjeta">
                 </div>
                 <div class="col-md-4">
                   <label for="numeroUsuario">Nº de Usuario</label>
-                  <input type="number" class="form-control" placeholder="numeroUsuario" name="numeroUsuario" formControlName="numeroUsuario">
+                  <input type="number" class="form-control" placeholder="Numero de Usuario" name="numeroUsuario" formControlName="numeroUsuario">
                 </div>
               </div>
 
@@ -209,7 +210,7 @@
                     </p>
                     <input type="checkbox" name="vehicle" value="Car"> Bonos Gimnasio
                     <br>
-                    <input type="checkbox" name="vehicle" value="Car"> Bono masaje 1 hora
+                    <input type="checkbox" name="vehicle" value="Car"> Bono Masaje 1 hora
                     <br>
                     <input type="checkbox" name="vehicle" value="Car"> Bono Padel
                     <br>

@@ -3,35 +3,36 @@
 
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
-      <ul class="sidebar-nav">
-        <li class="sidebar-brand" routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
-          <a routerLink="/">
-            Padel Marbella
-          </a>
-        </li>
-        <li routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
-          <a routerLink="/">Home</a>
-        </li>
-        <li routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
-          <a routerLink="nuevo-jugador">Jugadores</a>
-        </li>
-        <li>
-          <a href="#">Overview</a>
-        </li>
-        <li>
-          <a href="#">Events</a>
-        </li>
-        <li>
-          <a href="#">About</a>
-        </li>
-        <li>
-          <a href="#">Services</a>
-        </li>
-        <li>
-          <a href="#">Contact</a>
-        </li>
-      </ul>
-    </div>
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand" routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
+            <a routerLink="/">
+              Padel Marbella
+            </a>
+          </li>
+          <li routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
+            <a routerLink="/">Home</a>
+          </li>
+          <li routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
+            <a routerLink="/listado-jugador">Jugadores</a>
+          </li>
+         <li>
+            <a routerLink="/listado-reservas">Lista de reservas</a>
+          </li>
+          <!--
+          <li>
+            <a href="#">Events</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Services</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li> -->
+        </ul>
+      </div>
   </div>
   <div class="cabecera">
     <nav class="navbar navbar-expand-md navbar-black bg-black mb-4 " style="background-color: #000;color: #999999; height: 50px;margin-left: -10px;;">
@@ -60,6 +61,7 @@
     <i class="fas fa-plus"></i>
   </button>
 </div>
+<br>
 <br>
 <div class="col-md-12 cabecera">
   <table class="table table-bordered table-striped">

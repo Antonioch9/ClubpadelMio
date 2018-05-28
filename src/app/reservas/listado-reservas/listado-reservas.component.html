@@ -1,24 +1,116 @@
-<h4>Transfer custom data in Drag-and-Drop</h4>
-<div class="row">
-    <div class="col-sm-3">
-        <div class="panel panel-success" >
-            <div class="panel-heading" >Available to drag</div>
-            <div class="panel-body" style="border:solid 1px red">
-                <div class="panel panel-default" dnd-draggable [dragEnabled]="true" [dragData]="transferData" style="border:solid 1px blue">
-                    <div class="panel-body">
-                        <div>Drag Me</div>
-                        <div></div>
-                    </div>
+<div class="global">
+    <div id="wrapper" class="toggled">
+  
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand" routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
+            <a routerLink="/">
+              Padel Marbella
+            </a>
+          </li>
+          <li routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
+            <a routerLink="/">Home</a>
+          </li>
+          <li routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
+            <a routerLink="/listado-jugador">Jugadores</a>
+          </li>
+          <li>
+            <a routerLink="/listado-reservas">Lista de Reservas</a>
+          </li>
+          <!-- <li>
+            <a href="#">Events</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Services</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+    <div class="cabecera">
+      <nav class="navbar navbar-expand-md navbar-black bg-black mb-4 " style="background-color: #000;color: #999999; height: 50px;margin-left: -10px;;">
+  
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+  
+        </div>
+      </nav>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a routerLink="/" [routerLinkActive]="['router-link-active']">Inicio</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Lista de Reservas</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div class="col-md-12  cabecera" style="display: flex">
+    <h4>Listado de reservas</h4> &nbsp; &nbsp; &nbsp;
+    
+  </div>
+  <br>
+  <div class="col-md-12 cabecera">
+    <table class="table table-bordered table-striped">
+      <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>F.Entrada</th>
+        <th>F.Salida</th>
+        <th>Pagado</th>
+        <th>Funciones</th>
+      </tr>
+      <tr>
+        <td>Alberto</td>
+        <td>Sánchez</td>
+        <td>25/03/2018 12:30</td>
+        <td>25/03/2018 13:30</td>
+        <td>si</td>
+        <td>
+          <button routerLink="/editar-reservas" class="btn btn-primary">
+            <i class="fas fa-pencil-alt"></i>
+          </button> &nbsp;
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+  
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Eliminar Jugador</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
+                <div class="modal-body">
+                 ¿Realmente desea eliminar al jugador?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-primary">Eliminar</button>
+                </div>
+              </div>
             </div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div dnd-droppable class="panel panel-info" (onDropSuccess)="transferDataSuccess($event)" style="border:solid 1px teal">
-            <div class="panel-heading">Place to drop (Items:{{receivedData.length}})</div>
-            <div class="panel-body"style="border:solid 1px red" >
-                <div [hidden]="!receivedData.length > 0" *ngFor="let data of receivedData">{{data | json}}</div>
-            </div>
-        </div>
-    </div>
-</div>
+          </div>
+        </td>
+      </tr>
+  
+      <!-- <tr *ngFor="let proveedor of proveedores">
+          <td>{{proveedor.nombre}}</td>
+          <td>{{proveedor.cif}}</td>
+          <td>{{proveedor.localidad}}</td>
+        </tr> -->
+    </table>
+  </div>

@@ -13,11 +13,12 @@
           <a routerLink="/">Home</a>
         </li>
         <li routerLinkActive="activado" [routerLinkActiveOptions]="{exact:true}">
-          <a routerLink="nuevo-jugador">Jugadores</a>
+          <a routerLink="/listado-jugador">Jugadores</a>
         </li>
         <li>
-          <a href="#">Overview</a>
+          <a routerLink="/listado-reservas">Lista de reservas</a>
         </li>
+        <!--
         <li>
           <a href="#">Events</a>
         </li>
@@ -29,7 +30,7 @@
         </li>
         <li>
           <a href="#">Contact</a>
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>
@@ -47,10 +48,103 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']">Inicio</a>
+          <a routerLink="/">Inicio</a>
         </li>
-        <li class="breadcrumb-item active" aria-current="page">Nuevo Jugador</li>
+        <li class="breadcrumb-item active" aria-current="page">Nueva Reserva</li>
       </ol>
     </nav>
+  </div>
+</div>
+<div class="cabecera">
+
+  <div class="row">
+    <div class="col-md-12 ">
+      <div class="formulario">
+        <form [formGroup]="formJug" #formDato="ngForm" (ngSubmit)="guardarFormulario()">
+          <div class="row">
+            <div class="col">
+              <h4>Datos de la Reserva</h4>
+              <div class="col-md-4 ">
+                <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <span *ngIf="formJug.controls.nombre.valid &&
+                        formJug.controls.nombre.dirty">
+                    <i class="fas fa-check-circle valido"></i>
+                  </span>
+                  <span class="carmesi" *ngIf="formJug.controls.nombre.invalid &&
+                          formJug.controls.nombre.touched">
+                    <i class="fas fa-times-circle no-valido"></i>
+                    El campo es obligatorio
+                  </span>
+                  <input type="text" class="form-control" placeholder="Nombre" name="nombre" formControlName="nombre">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="apellidos">Apellidos</label>
+                  <span *ngIf="formJug.controls.apellidos.valid &&
+                        formJug.controls.apellidos.dirty">
+                    <i class="fas fa-check-circle valido"></i>
+                  </span>
+                  <span class="carmesi" *ngIf="formJug.controls.apellidos.invalid &&
+                          formJug.controls.apellidos.touched">
+                    <i class="fas fa-times-circle no-valido"></i>
+                    El campo es obligatorio
+                  </span>
+                  <input type="text" class="form-control" placeholder="Apellidos" name="apellidos" formControlName="apellidos">
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="form-group">
+                  <label for="dni">DNI</label>
+                  <span *ngIf="formJug.controls.dni.valid &&
+                        formJug.controls.dni.dirty">
+                    <i class="fas fa-check-circle valido"></i>
+                  </span>
+                  <span class="carmesi" *ngIf="formJug.controls.dni.invalid &&
+                          formJug.controls.dni.touched">
+                    <i class="fas fa-times-circle no-valido"></i>
+                    El campo es obligatorio
+                  </span>
+                  <span class="carmesi" *ngIf="formJug.controls.dni.invalid &&
+                        formJug.controls.dni.dirty &&
+                        formJug.value.dni">
+                    <i class="fas fa-times-circle no-valido"></i>
+                    El campo debe tener 9 caracteres
+                  </span>
+                  <input type="text" class="form-control" formControlName="dni" [(ngModel)]="formJug.value.dni" maxlength="9" placeholder="0000000X" name="dni" pattern="[A-Za-z0-9]+" >
+                </div>
+              </div>
+              <div class="col">
+                      <div class="col-md-2">
+                          <label for="numeroUsuario">Nº de Usuario</label>
+                          <input type="number" class="form-control" placeholder="Numero de Usuario" name="numeroUsuario" formControlName="numeroUsuario">
+                        </div>
+                <div class="col-md-2">
+                  <label for="">Fecha de Entrada</label>
+                  <input type="date" class="form-control" readonly>
+                </div>
+                <div class="col-md-2">
+                    <label for="">Fecha de Salida</label>
+                    <input type="date" class="form-control" readonly>
+                  </div>
+                       
+                </div>
+                
+            </div>
+            
+          </div>
+          
+          <div style=" width: 100%">
+            <div style="padding-left: 80%;display: inline;">
+              <button type="submit" class="btn btn-primary" style="margin: 5px;" >Reservar</button>
+              <button class="btn btn-danger" routerLink="/">Volver</button>
+            </div>
+
+          </div>
+
+        </form>
+      </div>
+    </div>
   </div>
 </div>

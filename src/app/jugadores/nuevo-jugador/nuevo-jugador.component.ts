@@ -33,7 +33,7 @@ export class NuevoJugadorComponent implements OnInit {
     "Tunisia", "Turkey", "Turkmenistan", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States",
     "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"]
   niveles: String[] = [
-    "principiante", "Medio", " Alto",
+    "Principiante", "Medio", " Alto",
   ]
   @ViewChild('formDato') formDato:NgForm;
   context: CanvasRenderingContext2D;

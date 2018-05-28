@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Anton');
+
 #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -169,15 +170,14 @@
 
 }
 .largo{
-    width: 85%
+    width: 85%;
+    border: solid 2px greenyellow;
+    border-radius: 10px;
 }
 label{
     color:black;
 }
-input{
-    border: solid 2px greenyellow;
-    border-radius: 10px;
-}
+
 .jugador:hover{
     z-index: 100;
     background-color: black;
