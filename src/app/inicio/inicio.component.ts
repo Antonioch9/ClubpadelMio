@@ -9,6 +9,8 @@ import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class InicioComponent implements OnInit {
   @ViewChild('MyRef') element: ElementRef;
+  @ViewChild('formRese') formRese:NgForm 
+  reserva:any;
   titulo:any={
     p1:'my Guide Marbella',
     p2:'La habana',
@@ -21,6 +23,7 @@ export class InicioComponent implements OnInit {
     p9:'Heaven Beach Club',
     p10:'Estrella Dawn'
   }
+  entrada:object=new Date()
    
 
   
@@ -38,13 +41,26 @@ ngAfterViewInit() {
       this.receivedData.push($event);
       console.log($event)
   }
-  constructor(private fj: FormBuilder) {
+  constructor() {
+    this.reserva={
+      fechaEntrada:null,
+      fechaSalida:null,
+      titulo:null,
+      titulo2:null,
     
+    }
    }
 
   ngOnInit() {
     
   }
   
-
+  guardarReserva(){
+    this.reserva.fechaEntrada=this.formRese.value.fechaEntrada;
+    this.reserva.fechaSalida=this.formRese.value.fechaSalida;
+    this.reserva.titulo=this.formRese.value.titulo;
+    this.reserva.titulo2=this.formRese.value.titulo2;
+    console.log(this.reserva)
+  }
+  
 }

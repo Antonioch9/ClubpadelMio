@@ -54,13 +54,20 @@
 </div>
 </div>
 <div style="display: flex; position: absolute;">
+    <form  #formRese="ngForm" (ngSubmit)="guardarReserva()"  >
     <div style="padding-left: 300px; display: flex; flex-direction: row; justify-content: space-around; width: 75%;flex-wrap: wrap; overflow: auto;">
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
+            
+                <!-- <input type="date" name="fechaEntrada" class="form-control" ngModel >
+                <input type="date" name="fechaSalida" class="form-control" ngModel >
+                <button  type="submit"  class="btn btn-success">reservar</button> -->
+
+                
             
 
 
             <div class="letra">
-                <p >{{titulo.p1}}</p>
+                <p [(ngModel)]="titulo.p1" name="titulo" >{{titulo.p1}}</p>
             </div>
             <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
                 <div [hidden]="!receivedData.length > 0"  class="jugador" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
@@ -83,25 +90,25 @@
                         <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                     </div>
                 </div>
-                <input class="largo" type="datetime" name="fechayhora"  min="2018-05-23T08:00:00" step="1800">
+                <input type="date" name="fechaEntrada" class="form-control" ngModel >
                 <br>
                 <div class="input-group mb-2 centrado">
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                     </div>
                 </div>
-                <input class="largo" type="datetime-local" name="fechayhora"  min="2018-05-23T08:00:00" step="1800">
+                <input type="date" name="fechaSalida" class="form-control" ngModel >
 
             </div>
 
             <div class="botones">
-                <button  type="submit"  class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
+                <button  (click)="guardarReserva1()"  class="btn btn-success">reservar</button>
             </div>
         </div>
     
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
-                <p>{{titulo.p2}}</p>
+                <p [(ngModel)]="titulo.p2" name="p2">{{titulo.p2}}</p>
             </div>
             <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
                 <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
@@ -124,24 +131,24 @@
                             <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                         </div>
                     </div>
-                    <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00" min="2018-05-23T08:00:00" step="1800">
+                    <input type="date" name="fechaEntrada" class="form-control" ngModel >
                     <br>
                     <div class="input-group mb-2 centrado">
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                         </div>
                     </div>
-                    <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00" min="2018-05-23T08:00:00" step="1800">
+                    <input type="date" name="fechaSalida" class="form-control" ngModel >
     
                 </div>
 
             <div class="botones">
-                <button class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
+                <button (click)="guardarReserva(p2)" class="btn btn-success">reservar</button>
             </div>
         </div>
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
-                <p>{{titulo.p3}}</p>
+                <p [(ngModel)]="titulo.p3" >{{titulo.p3}}</p>
             </div>
             <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
                 <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
@@ -164,24 +171,24 @@
                         <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                     </div>
                 </div>
-                <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00" min="2018-05-23T08:00:00" step="1800">
+                <input type="date" name="fechaEntrada" class="form-control" ngModel >
                 <br>
                 <div class="input-group mb-2 centrado">
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                     </div>
                 </div>
-                <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00" min="2018-05-23T08:00:00" step="1800">
+                <input type="date" name="fechaSalida" class="form-control" ngModel >
 
             </div>
 
             <div class="botones">
-                <button class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
+                <!-- <button class="btn btn-success">reservar</button> -->
             </div>
         </div>
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
-                <p>{{titulo.p4}}</p>
+                <p [(ngModel)]="titulo.p4" >{{titulo.p4}}</p>
             </div>
             <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
                 <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
@@ -204,24 +211,24 @@
                         <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                     </div>
                 </div>
-                <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00" min="2018-05-23T08:00:00" step="1800">
+                <input type="date" name="fechaEntrada" class="form-control" ngModel >
                 <br>
                 <div class="input-group mb-2 centrado">
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                     </div>
                 </div>
-                <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00" min="2018-05-23T08:00:00" step="1800">
+                <input type="date" name="fechaSalida" class="form-control" ngModel >
 
             </div>
 
             <div class="botones">
-                <button class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
+                <!-- <button class="btn btn-success">reservar</button> -->
             </div>
         </div>
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
-                <p>{{titulo.p5}}</p>
+                <p [(ngModel)]="titulo.p5" >{{titulo.p5}}</p>
             </div>
             <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
                 <div  [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
@@ -244,24 +251,24 @@
                         <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                     </div>
                 </div>
-                <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00" min="2018-05-23T08:00:00" step="1800">
+                <input type="date" name="fechaEntrada" class="form-control" ngModel >
                 <br>
                 <div class="input-group mb-2 centrado">
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                     </div>
                 </div>
-                <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00" min="2018-05-23T08:00:00" step="1800">
+                <input type="date" name="fechaSalida" class="form-control" ngModel >
 
             </div>
 
             <div class="botones">
-                <button class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
+                <!-- <button class="btn btn-success">reservar</button> -->
             </div>
         </div>
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
-                <p>{{titulo.p6}}</p>
+                <p [(ngModel)]="titulo.p6"  >{{titulo.p6}}</p>
             </div>
             <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
                 <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
@@ -284,24 +291,24 @@
                         <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                     </div>
                 </div>
-                <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00" min="2018-05-23T08:00:00" step="1800">
+                <input type="date" name="fechaEntrada" class="form-control" ngModel >
                 <br>
                 <div class="input-group mb-2 centrado">
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                     </div>
                 </div>
-                <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00" min="2018-05-23T08:00:00" step="1800">
+                <input type="date" name="fechaSalida" class="form-control" ngModel >
 
             </div>
 
             <div class="botones">
-                <button class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
+                <!-- <button class="btn btn-success">reservar</button> -->
             </div>
         </div>
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
-                <p>{{titulo.p7}}</p>
+                <p [(ngModel)]="titulo.p7" >{{titulo.p7}}</p>
             </div>
             <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
                 <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
@@ -324,24 +331,24 @@
                         <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                     </div>
                 </div>
-                <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00" min="2018-05-23T08:00:00" step="1800">
+                <input type="date" name="fechaEntrada" class="form-control" ngModel >
                 <br>
                 <div class="input-group mb-2 centrado">
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                     </div>
                 </div>
-                <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00" min="2018-05-23T08:00:00" step="1800">
+                <input type="date" name="fechaSalida" class="form-control" ngModel >
 
             </div>
 
             <div class="botones">
-                <button class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
+                <!-- <button class="btn btn-success">reservar</button> -->
             </div>
         </div>
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
                 <div class="letra">
-                    <p>{{titulo.p8}}</p>
+                    <p [(ngModel)]="titulo.p8" >{{titulo.p8}}</p>
                 </div>
                 <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
                     <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
@@ -364,7 +371,7 @@
                         <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                     </div>
                 </div>
-                    <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00"min="2018-05-23T08:00:00" step="1800">
+                <input type="date" name="fechaEntrada" class="form-control" ngModel >
                 <br>
                     <div class="input-group mb-2 centrado">
                             <div class="input-group-prepend">
@@ -376,12 +383,12 @@
             </div>
                 
                 <div class="botones">
-                    <button class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
+                    <!-- <button class="btn btn-success">reservar</button> -->
                 </div>
             </div>
             <div style="border: solid 3px green;height: 600px;" class="tarjeta">
                     <div class="letra">
-                        <p>{{titulo.p9}}</p>
+                        <p [(ngModel)]="titulo.p9" >{{titulo.p9}}</p>
                     </div>
                     <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
                         <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
@@ -404,7 +411,7 @@
                             <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                         </div>
                     </div>
-                        <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00"min="2018-05-23T08:00:00" step="1800">
+                    <input type="date" name="fechaEntrada" class="form-control" ngModel >
                     <br>
                         <div class="input-group mb-2 centrado">
                                 <div class="input-group-prepend">
@@ -416,12 +423,12 @@
                 </div>
                     
                     <div class="botones">
-                        <button class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
+                        <!-- <button class="btn btn-success">reservar</button> -->
                     </div>
                 </div>
                 <div style="border: solid 3px green;height: 600px;" class="tarjeta">
                         <div class="letra">
-                            <p>{{titulo.p10}}</p>
+                            <p [(ngModel)]="titulo.p10" >{{titulo.p10}}</p>
                         </div>
                         <div  dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
                             <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
@@ -444,7 +451,7 @@
                                 <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                             </div>
                         </div>
-                            <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00"min="2018-05-23T08:00:00" step="1800">
+                        <input type="date" name="fechaEntrada" class="form-control" ngModel >
                         <br>
                             <div class="input-group mb-2 centrado">
                                     <div class="input-group-prepend">
@@ -456,11 +463,11 @@
                     </div>
                         
                         <div class="botones">
-                            <button class="btn btn-success"routerLink="/nueva-reservas">reservar</button>
+                            <!-- <button class="btn btn-success">reservar</button> -->
                         </div>
                     </div>
     </div>
-
+</form>
     <div class="barra">
         <div style="flex-direction: column; align-items: flex-end">
             <div style="height: 10%; height: 100%;display: flex; flex-direction: column;align-content: flex-end">
