@@ -51,4 +51,27 @@
             </li>
         </ol>
     </nav>
+    <div class="col-md-12" style="text-align: center;">
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="customRadioInline1" class="custom-control-input"
+                  name="customRadioInline1" 
+                  (click)="primerTrimestre()">
+          <label class="custom-control-label" for="customRadioInline1">
+            1<sup>er</sup> Trimestre
+          </label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="customRadioInline2" class="custom-control-input"
+                  name="customRadioInline1" 
+                  (click)="segundoTrimestre()" checked>
+          <label class="custom-control-label" for="customRadioInline2">
+            2<sup>o</sup> Trimestre
+          </label>
+        </div>
+      </div>
+    <div class="grafica">
+        <canvas  id="grafico1">{{chartPtosTrimestre}}</canvas>
+      </div>
   </div>
+  
+  
