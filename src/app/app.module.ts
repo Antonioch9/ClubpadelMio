@@ -17,6 +17,7 @@ import { EditarJugadorComponent } from './jugadores/editar-jugador/editar-jugado
 import { NuevaReservaComponent } from './reservas/nueva-reserva/nueva-reserva.component';
 import { ListadoReservasComponent } from './reservas/listado-reservas/listado-reservas.component';
 import { EditarReservasComponent } from './reservas/editar-reservas/editar-reservas.component';
+import { GraficasComponent } from './estadisticas/graficas/graficas.component';
 
 
 const rutas: Routes = [
@@ -27,18 +28,19 @@ const rutas: Routes = [
   { path: 'nueva-reservas', component: NuevaReservaComponent },
   { path: 'listado-reservas', component: ListadoReservasComponent },
   { path: 'editar-reservas', component: EditarReservasComponent },
+  { path: 'graficas', component: GraficasComponent }
 ]
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-
     NuevoJugadorComponent,
     ListadoJugadorComponent,
     EditarJugadorComponent,
     NuevaReservaComponent,
     ListadoReservasComponent,
     EditarReservasComponent,
+    GraficasComponent,
   ],
   imports: [
     BrowserModule,
