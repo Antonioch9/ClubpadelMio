@@ -17,9 +17,9 @@ export class GraficasComponent implements OnInit {
   diaSgMes:any = new Date("2018-05-01").valueOf();
   diaTrMes:any = new Date("2018-06-01").valueOf();
   diaCtMes:any = new Date("2018-07-01").valueOf();
-  totalPrMes:number = 0;
-  totalSgMes:number = 0;
-  totalTrMes:number = 0;
+  totalPrMes:number = 150;
+  totalSgMes:number = 200;
+  totalTrMes:number = 350;
   prMes:string = 'Abril';
   sgMes:string = 'Mayo';
   trMes:string = 'Junio';

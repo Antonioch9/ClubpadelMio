@@ -55,8 +55,11 @@
 </div>
 </div>
 <div style="display: flex; position: absolute;">
-    <form  #formRese="ngForm" (ngSubmit)="guardarReserva()"  >
+    
     <div style="padding-left: 300px; display: flex; flex-direction: row; justify-content: space-around; width: 75%;flex-wrap: wrap; overflow: auto;">
+
+
+            <form  #formRese="ngForm"  >
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             
                 <!-- <input type="date" name="fechaEntrada" class="form-control" ngModel >
@@ -71,16 +74,16 @@
                 <p [(ngModel)]="titulo.p1" name="titulo" >{{titulo.p1}}</p>
             </div>
             <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div [hidden]="!receivedData.length > 0"  class="jugador" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div   class="jugador" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
 
@@ -103,25 +106,28 @@
             </div>
 
             <div class="botones">
-                <button  (click)="guardarReserva1()"  class="btn btn-success">reservar</button>
+                <button  (click)="guardarReserva()"  class="btn btn-success">reservar</button>
             </div>
         </div>
-    
+    </form>
+
+    <form  #formReser="ngForm"  >
+
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
-                <p [(ngModel)]="titulo.p2" name="p2">{{titulo.p2}}</p>
+                <p [(ngModel)]="titulo.p2" name="titulo">{{titulo.p2}}</p>
             </div>
             <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
 
@@ -144,24 +150,29 @@
                 </div>
 
             <div class="botones">
-                <button (click)="guardarReserva(p2)" class="btn btn-success">reservar</button>
+                <button (click)="guardarReservar()" class="btn btn-success">reservar</button>
             </div>
         </div>
+    </form>
+
+
+    <form  #formReserv="ngForm"  >
+
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
-                <p [(ngModel)]="titulo.p3" >{{titulo.p3}}</p>
+                    <p [(ngModel)]="titulo.p3" name="titulo">{{titulo.p3}}</p>
             </div>
             <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
 
@@ -184,24 +195,27 @@
             </div>
 
             <div class="botones">
-                <!-- <button class="btn btn-success">reservar</button> -->
+                    <button (click)="guardarReservar3()" class="btn btn-success">reservar</button>
             </div>
         </div>
+
+    </form>
+    <form  #formReserva="ngForm">
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
-                <p [(ngModel)]="titulo.p4" >{{titulo.p4}}</p>
+                <p [(ngModel)]="titulo.p4" name="titulo" >{{titulo.p4}}</p>
             </div>
             <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0"style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
 
@@ -224,24 +238,27 @@
             </div>
 
             <div class="botones">
-                <!-- <button class="btn btn-success">reservar</button> -->
+                    <button (click)="guardarReservar4()" class="btn btn-success">reservar</button>
             </div>
         </div>
+    </form>
+    <form  #formReserva5="ngForm">
+
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
-                <p [(ngModel)]="titulo.p5" >{{titulo.p5}}</p>
+                <p [(ngModel)]="titulo.p5" name="titulo">{{titulo.p5}}</p>
             </div>
             <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div  [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
 
@@ -264,24 +281,26 @@
             </div>
 
             <div class="botones">
-                <!-- <button class="btn btn-success">reservar</button> -->
+                <button (click)="guardarReservar5()" class="btn btn-success">reservar</button>
             </div>
         </div>
+    </form>
+    <form  #formReserva6="ngForm">
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
-                <p [(ngModel)]="titulo.p6"  >{{titulo.p6}}</p>
+                <p [(ngModel)]="titulo.p6" name="titulo"  >{{titulo.p6}}</p>
             </div>
             <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
 
@@ -304,24 +323,26 @@
             </div>
 
             <div class="botones">
-                <!-- <button class="btn btn-success">reservar</button> -->
+                <button (click)="guardarReservar6()" class="btn btn-success">reservar</button>
             </div>
         </div>
+    </form>
+    <form  #formReserva7="ngForm">
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
             <div class="letra">
-                <p [(ngModel)]="titulo.p7" >{{titulo.p7}}</p>
+                <p [(ngModel)]="titulo.p7" name="titulo" >{{titulo.p7}}</p>
             </div>
             <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
-                <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
                 </div>
 
@@ -344,24 +365,26 @@
             </div>
 
             <div class="botones">
-                <!-- <button class="btn btn-success">reservar</button> -->
+                <button (click)="guardarReservar7()" class="btn btn-success">reservar</button>
             </div>
         </div>
+    </form>
+    <form  #formReserva8="ngForm">
         <div style="border: solid 3px green;height: 600px;" class="tarjeta">
                 <div class="letra">
-                    <p [(ngModel)]="titulo.p8" >{{titulo.p8}}</p>
+                    <p [(ngModel)]="titulo.p8" name="titulo" >{{titulo.p8}}</p>
                 </div>
                 <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                    <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                    <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
     
                     </div>
-                    <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                    <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
     
                     </div>
-                    <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                    <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
     
                     </div>
-                    <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                    <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
     
                     </div>
     
@@ -379,29 +402,31 @@
                                 <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                             </div>
                         </div>
-                            <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00"min="2018-05-23T08:00:00" step="1800">
+                        <input type="date" name="fechaSalida" class="form-control" ngModel >
                         
             </div>
                 
                 <div class="botones">
-                    <!-- <button class="btn btn-success">reservar</button> -->
+                    <button (click)="guardarReservar8()" class="btn btn-success">reservar</button>
                 </div>
             </div>
+        </form>
+        <form  #formReserva9="ngForm">
             <div style="border: solid 3px green;height: 600px;" class="tarjeta">
                     <div class="letra">
-                        <p [(ngModel)]="titulo.p9" >{{titulo.p9}}</p>
+                        <p [(ngModel)]="titulo.p9" name="titulo" >{{titulo.p9}}</p>
                     </div>
                     <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                        <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                        <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
         
                         </div>
-                        <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                        <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
         
                         </div>
-                        <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                        <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
         
                         </div>
-                        <div [hidden]="!receivedData.length > 0"  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                        <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
         
                         </div>
         
@@ -419,29 +444,31 @@
                                     <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                                 </div>
                             </div>
-                                <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00"min="2018-05-23T08:00:00" step="1800">
+                            <input type="date" name="fechaSalida" class="form-control" ngModel >
                             
                 </div>
                     
                     <div class="botones">
-                        <!-- <button class="btn btn-success">reservar</button> -->
+                        <button (click)="guardarReservar9()" class="btn btn-success">reservar</button>
                     </div>
                 </div>
+            </form>
+            <form  #formReserva10="ngForm">
                 <div style="border: solid 3px green;height: 600px;" class="tarjeta">
                         <div class="letra">
-                            <p [(ngModel)]="titulo.p10" >{{titulo.p10}}</p>
+                            <p [(ngModel)]="titulo.p10" name="titulo">{{titulo.p10}}</p>
                         </div>
                         <div  dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                            <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                            <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
             
                             </div>
-                            <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                            <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
             
                             </div>
-                            <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                            <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
             
                             </div>
-                            <div [hidden]="!receivedData.length > 0" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                            <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
             
                             </div>
             
@@ -459,16 +486,17 @@
                                         <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                                     </div>
                                 </div>
-                                    <input class="largo" type="datetime-local" name="fechayhora" value="2018-05-23T08:00:00"min="2018-05-23T08:00:00" step="1800">
+                                <input type="date" name="fechaSalida" class="form-control" ngModel >
                                 
                     </div>
                         
                         <div class="botones">
-                            <!-- <button class="btn btn-success">reservar</button> -->
+                            <button (click)="guardarReservar10()" class="btn btn-success">reservar</button>
                         </div>
                     </div>
+                </form>
     </div>
-</form>
+
     <div class="barra">
         <div style="flex-direction: column; align-items: flex-end">
             <div style="height: 10%; height: 100%;display: flex; flex-direction: column;align-content: flex-end">

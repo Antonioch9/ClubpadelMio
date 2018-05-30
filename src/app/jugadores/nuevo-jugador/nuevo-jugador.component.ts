@@ -7,9 +7,9 @@ import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./nuevo-jugador.component.css']
 })
 export class NuevoJugadorComponent implements OnInit {
-  formJug:FormGroup
+  formJug: FormGroup
 
-  
+
   nacionalidades: String[] = [
     "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antarctica", "Antigua and Barbuda",
     "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados",
@@ -35,56 +35,70 @@ export class NuevoJugadorComponent implements OnInit {
   niveles: String[] = [
     "Principiante", "Medio", " Alto",
   ]
-  @ViewChild('formDato') formDato:NgForm;
+  @ViewChild('formDato') formDato: NgForm;
   context: CanvasRenderingContext2D;
   @ViewChild("myCanvas") mycambas
 
-  jugador:any;
-  dni:String;
+  //objeto para el checkbox
+  marcable = {
+    gimnasio: false,
+    padel: false,
+    padelGimnasio: false,
+    bonogimnasio:false,
+    bonomasaje:false,
+    bonopadel:false
+  }
 
-  constructor(private fj: FormBuilder,) {
+
+  //fin de objeto para el checkbox
+
+  jugador: any;
+  dni: String;
+
+  constructor(private fj: FormBuilder, ) {
     this.jugador = {
-      nombre:null,
-      apellidos:null,
-       dni:null,
-      pasaporte:null,
-      nacionalidad:null,
-      nivel:null,
-      id:null,
-      numeroTarjeta:null,
-      numeroUsuario:null,
-      gimnasio:null,
-      padel:null,
-      padelGimnasio:null
+      nombre: null,
+      apellidos: null,
+      dni: null,
+      pasaporte: null,
+      nacionalidad: null,
+      nivel: null,
+      id: null,
+      numeroTarjeta: null,
+      numeroUsuario: null,
+      // gimnasio:false,
+      // padel:null,
+      // padelGimnasio:null
 
     }
-   }
+  }
 
   ngOnInit() {
     this.iniciarFormulario()
   }
-  iniciarFormulario(){
-    this.formJug =this.fj.group({
-      nombre:[null,Validators.required],
-      apellidos:[null,Validators.required],
-      dni:["",[Validators.required, Validators.minLength(9)]],
-      pasaporte:[null,Validators.required],
+  seleccionar(){
+    console.log(this.marcable)
+  }
+  iniciarFormulario() {
+    this.formJug = this.fj.group({
+      nombre: [null, Validators.required],
+      apellidos: [null, Validators.required],
+      dni: ["", [Validators.required, Validators.minLength(9)]],
+      pasaporte: [null, Validators.required],
       nacionalidad:[null,Validators.required],
       nivel:[null,Validators.required],
       id:[null,Validators.required],
       numeroTarjeta:[null,Validators.required],
       numeroUsuario:[null,Validators.required],
-      gimnasio:[null,Validators.required],
-      padel:[null,Validators.required],
-      padelGimnasio:[null,Validators.required]
+  
     })
     this.detectarCambios();
   }
-  detectarCambios(){
-    this.formJug.valueChanges.subscribe(valorForm =>{
+  detectarCambios() {
+    this.formJug.valueChanges.subscribe(valorForm => {
       // this.dni= valorForm.dni.starsWith('A')
     })
- 
+
   }
   // Metodo pra visualizar el precargado de la imagen
   preview(e: any): void {
@@ -93,33 +107,30 @@ export class NuevoJugadorComponent implements OnInit {
     context.clearRect(0, 0, 300, 300)
     var render = new FileReader();
     render.onload = function (event) {
-        var img = new Image();
-        img.onload = function () {
-            canvas.width = img.width;
-            canvas.height = img.height;
-            context.drawImage(img, 0, 0)
-        };
-        // img.src= event.target.result;
+      var img = new Image();
+      img.onload = function () {
+        canvas.width = img.width;
+        canvas.height = img.height;
+        context.drawImage(img, 0, 0)
+      };
+      // img.src= event.target.result;
     }
     render.readAsDataURL(e.target.files[0]);
     console.log(this.preview)
-}
+  }
 
-  guardarFormulario(){
+  guardarFormulario() {
     this.jugador.nombre = this.formDato.value.nombre;
-    this.jugador.apellidos= this.formDato.value.apellidos;
+    this.jugador.apellidos = this.formDato.value.apellidos;
     this.jugador.dni = this.formDato.value.dni;
     this.jugador.pasaporte = this.formDato.value.pasaporte;
     this.jugador.nacionalidad = this.formDato.value.nacionalidad;
     this.jugador.nivel = this.formDato.value.nivel;
     this.jugador.id = this.formDato.value.id;
-    this.jugador.numeroTarjeta= this.formDato.value.numeroTarjeta;
-    this.jugador.numeroUsuario=this.formDato.value.numeroUsuario;
-    this.jugador.gimnasio = this.formDato.value.gimnasio;
-    this.jugador.padel= this.formDato.value.padel;
-    this.jugador.padelGimnasio= this.formDato.value.padelGimnasio
+    this.jugador.numeroTarjeta = this.formDato.value.numeroTarjeta;
+    this.jugador.numeroUsuario = this.formDato.value.numeroUsuario;
     this.formDato.reset();
     console.log(this.jugador)
   }
-  
+
 }

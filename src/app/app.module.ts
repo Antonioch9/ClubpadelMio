@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
+
+
 // import * as $ from 'jquery';
 import { DndModule } from 'ng2-dnd';
 
@@ -45,9 +47,7 @@ const rutas: Routes = [
   ],
   imports: [
     BrowserModule,
-    
     FormsModule,
-    
     ReactiveFormsModule,
     DndModule.forRoot(),
     RouterModule.forRoot(rutas)
