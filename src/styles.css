@@ -140,8 +140,14 @@
 .tarjeta{
     border-radius: 50px;
     margin-bottom: 10px;
-  
-    
+    z-index: 100;
+}
+.tarjeta:hover{
+  background-color: rgba(0, 0, 0, 0.563);
+}
+.foto{
+  position: relative;
+  z-index: -200;
 }
 .barra{
     position: fixed;
@@ -160,14 +166,13 @@
     align-items: center;
     
 }
-.centrado{
-   
 
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-
+.medio{
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  align-content: center !important;
+  
 }
 .largo{
     width: 85%;
@@ -196,4 +201,10 @@ height:none ;
 
 a{
   color: white !important;
+}
+.enlace{
+  color: blue !important;
+}
+.breadcrumb{
+background-color:lightgrey !important;
 }

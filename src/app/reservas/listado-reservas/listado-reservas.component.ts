@@ -6,11 +6,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './listado-reservas.component.html',
   styleUrls: ['./listado-reservas.component.css']
 })
+
 export class ListadoReservasComponent implements OnInit {
+
+
  
+  
   constructor() { }
 
   ngOnInit() {
+  
   }
 
 }

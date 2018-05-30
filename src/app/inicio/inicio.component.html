@@ -44,10 +44,10 @@
       
     </div>
   </nav>
-  <nav aria-label="breadcrumb">
+  <nav class="migas" aria-label="breadcrumb">
       <ol class="breadcrumb">
           <li class="breadcrumb-item">
-              <a routerLink="/" >Inicio</a>
+              <a class="enlace" routerLink="/" >Inicio</a>
           </li>
       </ol>
   </nav>
@@ -56,20 +56,15 @@
 </div>
 <div style="display: flex; position: absolute;">
     
-    <div style="padding-left: 300px; display: flex; flex-direction: row; justify-content: space-around; width: 75%;flex-wrap: wrap; overflow: auto;">
+    <div style="padding-left: 300px; display: flex; flex-direction: row; justify-content: space-around; width: 75%;flex-wrap: wrap;">
 
 
             <form  #formRese="ngForm"  >
-        <div style="border: solid 3px green;height: 600px;" class="tarjeta">
+        <div style="border: solid 3px green;height: auto;" class="tarjeta">
             
                 <!-- <input type="date" name="fechaEntrada" class="form-control" ngModel >
                 <input type="date" name="fechaSalida" class="form-control" ngModel >
                 <button  type="submit"  class="btn btn-success">reservar</button> -->
-
-                
-            
-
-
             <div class="letra">
                 <p [(ngModel)]="titulo.p1" name="titulo" >{{titulo.p1}}</p>
             </div>
@@ -89,22 +84,27 @@
 
             </div>
             <div class="fechas">
-                <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend ">
-                        <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
+                    <label for="horario">Horarios</label>
+                    <select class="form-control" name="horario" ngModel>
+                      <option *ngFor="let horario of horarios" [value]="horario">
+                        {{horario}}
+                      </option>
+                    </select>
+                    <br>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend medio ">
+                        <label class="input-group-text " for="inputGroupSelect01">Entrada</label>
                     </div>
                 </div>
                 <input type="date" name="fechaEntrada" class="form-control" ngModel >
                 <br>
                 <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend">
+                    <div class="input-group-prepend medio">
                         <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                     </div>
                 </div>
                 <input type="date" name="fechaSalida" class="form-control" ngModel >
-
             </div>
-
             <div class="botones">
                 <button  (click)="guardarReserva()"  class="btn btn-success">reservar</button>
             </div>
@@ -113,7 +113,7 @@
 
     <form  #formReser="ngForm"  >
 
-        <div style="border: solid 3px green;height: 600px;" class="tarjeta">
+        <div style="border: solid 3px green;height: auto;" class="tarjeta">
             <div class="letra">
                 <p [(ngModel)]="titulo.p2" name="titulo">{{titulo.p2}}</p>
             </div>
@@ -133,15 +133,21 @@
 
             </div>
             <div class="fechas">
+                    <label for="horario">Horarios</label>
+                    <select class="form-control" name="horario" ngModel>
+                      <option *ngFor="let horario of horarios" [value]="horario">
+                        {{horario}}
+                      </option>
+                    </select>
                     <div class="input-group mb-2 centrado">
-                        <div class="input-group-prepend ">
+                        <div class="input-group-prepend medio ">
                             <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                         </div>
                     </div>
                     <input type="date" name="fechaEntrada" class="form-control" ngModel >
                     <br>
                     <div class="input-group mb-2 centrado">
-                        <div class="input-group-prepend">
+                        <div class="input-group-prepend medio">
                             <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                         </div>
                     </div>
@@ -158,7 +164,7 @@
 
     <form  #formReserv="ngForm"  >
 
-        <div style="border: solid 3px green;height: 600px;" class="tarjeta">
+        <div style="border: solid 3px green;height: auto;" class="tarjeta">
             <div class="letra">
                     <p [(ngModel)]="titulo.p3" name="titulo">{{titulo.p3}}</p>
             </div>
@@ -178,15 +184,21 @@
 
             </div>
             <div class="fechas">
+                    <label for="horario">Horarios</label>
+                    <select class="form-control" name="horario" ngModel>
+                      <option *ngFor="let horario of horarios" [value]="horario">
+                        {{horario}}
+                      </option>
+                    </select>
                 <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend ">
+                    <div class="input-group-prepend medio ">
                         <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                     </div>
                 </div>
                 <input type="date" name="fechaEntrada" class="form-control" ngModel >
                 <br>
                 <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend">
+                    <div class="input-group-prepend medio">
                         <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                     </div>
                 </div>
@@ -201,7 +213,7 @@
 
     </form>
     <form  #formReserva="ngForm">
-        <div style="border: solid 3px green;height: 600px;" class="tarjeta">
+        <div style="border: solid 3px green;height: auto;" class="tarjeta">
             <div class="letra">
                 <p [(ngModel)]="titulo.p4" name="titulo" >{{titulo.p4}}</p>
             </div>
@@ -221,15 +233,21 @@
 
             </div>
             <div class="fechas">
+                    <label for="horario">Horarios</label>
+                    <select class="form-control" name="horario" ngModel>
+                      <option *ngFor="let horario of horarios" [value]="horario">
+                        {{horario}}
+                      </option>
+                    </select>
                 <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend ">
+                    <div class="input-group-prepend medio ">
                         <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                     </div>
                 </div>
                 <input type="date" name="fechaEntrada" class="form-control" ngModel >
                 <br>
                 <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend">
+                    <div class="input-group-prepend medio">
                         <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                     </div>
                 </div>
@@ -244,7 +262,7 @@
     </form>
     <form  #formReserva5="ngForm">
 
-        <div style="border: solid 3px green;height: 600px;" class="tarjeta">
+        <div style="border: solid 3px green;height: auto;" class="tarjeta">
             <div class="letra">
                 <p [(ngModel)]="titulo.p5" name="titulo">{{titulo.p5}}</p>
             </div>
@@ -264,15 +282,21 @@
 
             </div>
             <div class="fechas">
+                    <label for="horario">Horarios</label>
+                    <select class="form-control" name="horario" ngModel>
+                      <option *ngFor="let horario of horarios" [value]="horario">
+                        {{horario}}
+                      </option>
+                    </select>
                 <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend ">
+                    <div class="input-group-prepend medio ">
                         <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                     </div>
                 </div>
                 <input type="date" name="fechaEntrada" class="form-control" ngModel >
                 <br>
                 <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend">
+                    <div class="input-group-prepend medio">
                         <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                     </div>
                 </div>
@@ -286,7 +310,7 @@
         </div>
     </form>
     <form  #formReserva6="ngForm">
-        <div style="border: solid 3px green;height: 600px;" class="tarjeta">
+        <div style="border: solid 3px green;height: auto;" class="tarjeta">
             <div class="letra">
                 <p [(ngModel)]="titulo.p6" name="titulo"  >{{titulo.p6}}</p>
             </div>
@@ -306,15 +330,21 @@
 
             </div>
             <div class="fechas">
+                    <label for="horario">Horarios</label>
+                    <select class="form-control" name="horario" ngModel>
+                      <option *ngFor="let horario of horarios" [value]="horario">
+                        {{horario}}
+                      </option>
+                    </select>
                 <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend ">
+                    <div class="input-group-prepend medio ">
                         <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                     </div>
                 </div>
                 <input type="date" name="fechaEntrada" class="form-control" ngModel >
                 <br>
                 <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend">
+                    <div class="input-group-prepend medio">
                         <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                     </div>
                 </div>
@@ -328,7 +358,7 @@
         </div>
     </form>
     <form  #formReserva7="ngForm">
-        <div style="border: solid 3px green;height: 600px;" class="tarjeta">
+        <div style="border: solid 3px green;height: auto;" class="tarjeta">
             <div class="letra">
                 <p [(ngModel)]="titulo.p7" name="titulo" >{{titulo.p7}}</p>
             </div>
@@ -348,15 +378,21 @@
 
             </div>
             <div class="fechas">
+                    <label for="horario">Horarios</label>
+                    <select class="form-control" name="horario" ngModel>
+                      <option *ngFor="let horario of horarios" [value]="horario">
+                        {{horario}}
+                      </option>
+                    </select>
                 <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend ">
+                    <div class="input-group-prepend medio ">
                         <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                     </div>
                 </div>
                 <input type="date" name="fechaEntrada" class="form-control" ngModel >
                 <br>
                 <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend">
+                    <div class="input-group-prepend medio">
                         <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                     </div>
                 </div>
@@ -370,7 +406,7 @@
         </div>
     </form>
     <form  #formReserva8="ngForm">
-        <div style="border: solid 3px green;height: 600px;" class="tarjeta">
+        <div style="border: solid 3px green;height: auto;" class="tarjeta">
                 <div class="letra">
                     <p [(ngModel)]="titulo.p8" name="titulo" >{{titulo.p8}}</p>
                 </div>
@@ -390,15 +426,21 @@
     
                 </div>
             <div class="fechas">
+                    <label for="horario">Horarios</label>
+                    <select class="form-control" name="horario" ngModel>
+                      <option *ngFor="let horario of horarios" [value]="horario">
+                        {{horario}}
+                      </option>
+                    </select>
                 <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend " >
+                    <div class="input-group-prepend medio " >
                         <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                     </div>
                 </div>
                 <input type="date" name="fechaEntrada" class="form-control" ngModel >
                 <br>
                     <div class="input-group mb-2 centrado">
-                            <div class="input-group-prepend">
+                            <div class="input-group-prepend medio">
                                 <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                             </div>
                         </div>
@@ -412,7 +454,7 @@
             </div>
         </form>
         <form  #formReserva9="ngForm">
-            <div style="border: solid 3px green;height: 600px;" class="tarjeta">
+            <div style="border: solid 3px green;height: auto;" class="tarjeta">
                     <div class="letra">
                         <p [(ngModel)]="titulo.p9" name="titulo" >{{titulo.p9}}</p>
                     </div>
@@ -432,15 +474,21 @@
         
                     </div>
                 <div class="fechas">
+                        <label for="horario">Horarios</label>
+                        <select class="form-control" name="horario" ngModel>
+                          <option *ngFor="let horario of horarios" [value]="horario">
+                            {{horario}}
+                          </option>
+                        </select>
                     <div class="input-group mb-2 centrado">
-                        <div class="input-group-prepend " >
+                        <div class="input-group-prepend medio " >
                             <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                         </div>
                     </div>
                     <input type="date" name="fechaEntrada" class="form-control" ngModel >
                     <br>
                         <div class="input-group mb-2 centrado">
-                                <div class="input-group-prepend">
+                                <div class="input-group-prepend medio">
                                     <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                                 </div>
                             </div>
@@ -454,7 +502,7 @@
                 </div>
             </form>
             <form  #formReserva10="ngForm">
-                <div style="border: solid 3px green;height: 600px;" class="tarjeta">
+                <div style="border: solid 3px green;height: auto;" class="tarjeta">
                         <div class="letra">
                             <p [(ngModel)]="titulo.p10" name="titulo">{{titulo.p10}}</p>
                         </div>
@@ -474,15 +522,21 @@
             
                         </div>
                     <div class="fechas">
+                            <label for="horario">Horarios</label>
+                            <select class="form-control" name="horario" ngModel>
+                              <option *ngFor="let horario of horarios" [value]="horario">
+                                {{horario}}
+                              </option>
+                            </select>
                         <div class="input-group mb-2 centrado">
-                            <div class="input-group-prepend " >
+                            <div class="input-group-prepend medio " >
                                 <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
                             </div>
                         </div>
                         <input type="date" name="fechaEntrada" class="form-control" ngModel >
                         <br>
                             <div class="input-group mb-2 centrado">
-                                    <div class="input-group-prepend">
+                                    <div class="input-group-prepend medio">
                                         <label class="input-group-text" for="inputGroupSelect01">Salida</label>
                                     </div>
                                 </div>
@@ -525,16 +579,16 @@
                         <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/descarga.jpg" style="width:25px;height: 30px;" alt=""> Luis Pérez
                     </li>
                     <li>
-                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/fotos-5x5-cm-visa-estados-unidos-eeuu-y-otros-6-fotos-carnet-D_NQ_NP_23142-MLA20241872874_022015-F.jpg" style="width:25px;height: 30px;" alt=""> Sergio López
+                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/rodriguez_juan_ramon_foto-carnet.jpg" style="width:25px;height: 30px;" alt=""> Sergio López
                     </li>
                     <li>
-                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/fotos-5x5-cm-visa-estados-unidos-eeuu-y-otros-6-fotos-carnet-D_NQ_NP_23142-MLA20241872874_022015-F.jpg" style="width:25px;height: 30px;" alt=""> Juan Carlos Hernández
+                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/526.jpg" style="width:25px;height: 30px;" alt=""> Juan Carlos Hernández
                     </li>
                     <li>
-                        <img  dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/fotos-5x5-cm-visa-estados-unidos-eeuu-y-otros-6-fotos-carnet-D_NQ_NP_23142-MLA20241872874_022015-F.jpg" style="width:25px;height: 30px;" alt=""> Amanda García
+                        <img  dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/foto-carnet.jpg" style="width:25px;height: 30px;" alt=""> Amanda García
                     </li>
                     <li>
-                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/fotos-5x5-cm-visa-estados-unidos-eeuu-y-otros-6-fotos-carnet-D_NQ_NP_23142-MLA20241872874_022015-F.jpg" style="width:25px;height: 30px;" alt=""> Juan Ramon Pardo
+                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/520191091.jpg" style="width:25px;height: 30px;" alt=""> Juan Ramon Pardo
                     </li>
 
                 </ul>

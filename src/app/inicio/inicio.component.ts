@@ -8,6 +8,9 @@ import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
+  horarios: String[] = [
+    "8:00-9:00", "8:00-9:30", "9:30-10:30","9:30-11:00","11:00-12:00","11:00-12:30","12:30-13:30","12:30-14:00","14:00-15:00","14:00-15:30","15:30-16:30","15:30-17:00","17:00-18:00","17:00-18:30","18:30-19:30","18:30-20:00","20:00-21:00","20:00-21:00","21:00-22:00" 
+  ]
   @ViewChild('MyRef') element: ElementRef;
   @ViewChild('formRese') formRese:NgForm 
   @ViewChild('formReser') formReser:NgForm 
@@ -52,6 +55,7 @@ ngAfterViewInit() {
   }
   constructor() {
     this.reserva={
+      horario:null,
       fechaEntrada:null,
       fechaSalida:null,
       titulo:null
@@ -64,6 +68,7 @@ ngAfterViewInit() {
   }
   
   guardarReserva(){
+    this.reserva.horario=this.formRese.value.horario;
     this.reserva.fechaEntrada=this.formRese.value.fechaEntrada;
     this.reserva.fechaSalida=this.formRese.value.fechaSalida;
     this.reserva.titulo=this.formRese.value.titulo;
@@ -74,6 +79,7 @@ ngAfterViewInit() {
     this.reserva.fechaEntrada=this.formReser.value.fechaEntrada;
     this.reserva.fechaSalida=this.formReser.value.fechaSalida;
     this.reserva.titulo=this.formReser.value.titulo;
+    this.reserva.horario=this.formReser.value.horario;
    
     console.log(this.reserva)
   }
@@ -81,6 +87,7 @@ ngAfterViewInit() {
     this.reserva.fechaEntrada=this.formReserv.value.fechaEntrada;
     this.reserva.fechaSalida=this.formReserv.value.fechaSalida;
     this.reserva.titulo=this.formReserv.value.titulo;
+    this.reserva.horario=this.formReserv.value.horario;
     
     console.log(this.reserva)
   }
@@ -88,42 +95,49 @@ ngAfterViewInit() {
     this.reserva.fechaEntrada=this.formReserva.value.fechaEntrada;
     this.reserva.fechaSalida=this.formReserva.value.fechaSalida;
     this.reserva.titulo=this.formReserva.value.titulo;
+    this.reserva.horario=this.formReserva.value.horario;
     console.log(this.reserva)
   }
   guardarReservar5(){
     this.reserva.fechaEntrada=this.formReserva5.value.fechaEntrada;
     this.reserva.fechaSalida=this.formReserva5.value.fechaSalida;
     this.reserva.titulo=this.formReserva5.value.titulo;
+    this.reserva.horario=this.formReserva5.value.horario;
     console.log(this.reserva)
   }
   guardarReservar6(){
     this.reserva.fechaEntrada=this.formReserva6.value.fechaEntrada;
     this.reserva.fechaSalida=this.formReserva6.value.fechaSalida;
     this.reserva.titulo=this.formReserva6.value.titulo;
+    this.reserva.horario=this.formReserva6.value.horario;
     console.log(this.reserva)
   }
   guardarReservar7(){
     this.reserva.fechaEntrada=this.formReserva7.value.fechaEntrada;
     this.reserva.fechaSalida=this.formReserva7.value.fechaSalida;
     this.reserva.titulo=this.formReserva7.value.titulo;
+    this.reserva.horario=this.formReserva7.value.horario;
     console.log(this.reserva)
   }
   guardarReservar8(){
     this.reserva.fechaEntrada=this.formReserva8.value.fechaEntrada;
     this.reserva.fechaSalida=this.formReserva8.value.fechaSalida;
     this.reserva.titulo=this.formReserva8.value.titulo;
+    this.reserva.horario=this.formReserva8.value.horario;
     console.log(this.reserva)
   }
   guardarReservar9(){
     this.reserva.fechaEntrada=this.formReserva9.value.fechaEntrada;
     this.reserva.fechaSalida=this.formReserva9.value.fechaSalida;
     this.reserva.titulo=this.formReserva9.value.titulo;
+    this.reserva.horario=this.formReserva9.value.horario;
     console.log(this.reserva)
   }
   guardarReservar10(){
     this.reserva.fechaEntrada=this.formReserva10.value.fechaEntrada;
     this.reserva.fechaSalida=this.formReserva10.value.fechaSalida;
     this.reserva.titulo=this.formReserva10.value.titulo;
+    this.reserva.horario=this.formReserva10.value.horario;
     console.log(this.reserva)
   }
 }

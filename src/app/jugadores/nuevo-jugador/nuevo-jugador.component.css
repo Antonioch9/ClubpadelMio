@@ -33,3 +33,6 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
+select{
+    height: 30px !important;
+}

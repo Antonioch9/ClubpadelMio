@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 
 
+
 // import * as $ from 'jquery';
 import { DndModule } from 'ng2-dnd';
 

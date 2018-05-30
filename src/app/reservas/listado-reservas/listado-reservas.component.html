@@ -1,28 +1,27 @@
 <div class="global">
-    <div id="wrapper" class="toggled">
-  
-      <!-- Sidebar -->
-      <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a routerLink="/">
-                  <img src="../../../assets/img/logowebpeq2.png" style="width: 30px;height: 30px;" alt=""> &nbsp;
-                    Padel Marbella
-                </a>
-            </li>
-            <li>
-                <a routerLink="/">Home</a>
-            </li>
-            <li>
-                <a routerLink="/listado-jugador">Jugadores</a>
-            </li>
-            <li>
-                <a routerLink="/listado-reservas">Listado de Reservas</a>
-            </li>
-             <li>
-                <a routerLink="/graficas">Estadisticas</a>
-            </li>
-            <!--<li>
+  <div id="wrapper" class="toggled">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+          <a routerLink="/">
+            <img src="../../../assets/img/logowebpeq2.png" style="width: 30px;height: 30px;" alt=""> &nbsp; Padel Marbella
+          </a>
+        </li>
+        <li>
+          <a routerLink="/">Home</a>
+        </li>
+        <li>
+          <a routerLink="/listado-jugador">Jugadores</a>
+        </li>
+        <li>
+          <a routerLink="/listado-reservas">Listado de Reservas</a>
+        </li>
+        <li>
+          <a routerLink="/graficas">Estadisticas</a>
+        </li>
+        <!--<li>
                 <a href="#">About</a>
             </li>
             <li>
@@ -31,87 +30,142 @@
             <li>
                 <a href="#">Contact</a>
             </li> -->
-        </ul>
+      </ul>
     </div>
-    </div>
-    <div class="cabecera">
-      <nav class="navbar navbar-expand-md navbar-black bg-black mb-4 " style="background-color: #000;color: #999999; height: 50px;margin-left: -10px;;">
-  
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-          aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-  
+  </div>
+  <div class="cabecera">
+    <nav class="navbar navbar-expand-md navbar-black bg-black mb-4 " style="background-color: #000;color: #999999; height: 50px;margin-left: -10px;;">
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+
+      </div>
+    </nav>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a class="enlace" routerLink="/" [routerLinkActive]="['router-link-active']">Inicio</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Lista de Reservas</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+<div class="col-md-12  cabecera" style="display: flex">
+  <h4>Listado de reservas</h4> &nbsp; &nbsp; &nbsp;
+
+</div>
+<br>
+<div style="display: flex; position: absolute; ">
+  <div style="padding-left: 300px; display: flex; flex-direction: row; justify-content: space-around; width: 85%;flex-wrap: wrap; overflow: auto;padding-top: 30px;">
+      <div style="border: solid 3px green;height: auto;" class="tarjeta">
+
+        <!-- <input type="date" name="fechaEntrada" class="form-control" ngModel >
+                <input type="date" name="fechaSalida" class="form-control" ngModel >
+                <button  type="submit"  class="btn btn-success">Ver Reserva</button> -->
+
+        <div class="letra">
+          <p style="padding-top: 6px;">My Guide Marbella</p>
         </div>
-      </nav>
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a routerLink="/" [routerLinkActive]="['router-link-active']">Inicio</a>
-          </li>
-          <li class="breadcrumb-item active" aria-current="page">Lista de Reservas</li>
-        </ol>
-      </nav>
-    </div>
+        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" class="foto" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+        </div>
+        <div class="botones">
+          <button  class="btn btn-success">Ver Reserva &nbsp; <i class="far fa-eye"></i> </button>
+        </div>
+      </div>
+      <div style="border: solid 3px green;height: auto" class="tarjeta">
+        <div class="letra">
+          <p style="padding-top: 6px;">La habana</p>
+        </div>
+        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+        </div>
+        <div class="botones">
+          <button  class="btn btn-success">Ver Reserva &nbsp; <i class="far fa-eye"></i></button>
+        </div>
+      </div>
+      <div style="border: solid 3px green;height: auto;" class="tarjeta">
+        <div class="letra">
+          <p style="padding-top: 6px;">Royale Grass</p>
+        </div>
+        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+        </div>
+        <div class="botones">
+          <button  class="btn btn-success">Ver Reserva &nbsp; <i class="far fa-eye"></i></button>
+        </div>
+      </div>
+      <div style="border: solid 3px green;height: auto;" class="tarjeta">
+        <div class="letra">
+          <p style="padding-top: 6px;">Da Bruno</p>
+        </div>
+        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+        </div>
+        <div class="botones">
+          <button  class="btn btn-success">Ver Reserva &nbsp; <i class="far fa-eye"></i></button>
+        </div>
+      </div>
+      <div style="border: solid 3px green;height: auto;" class="tarjeta">
+        <div class="letra">
+          <p style="padding-top: 6px;">Fanautic Club</p>
+        </div>
+        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+        </div>
+        <div class="botones">
+          <button  class="btn btn-success">Ver Reserva &nbsp; <i class="far fa-eye"></i></button>
+        </div>
+      </div>
+      <div style="border: solid 3px green;height: auto;" class="tarjeta">
+        <div class="letra">
+          <p style="padding-top: 6px;">X-Magazine</p>
+        </div>
+        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+        </div>
+        <div class="botones">
+          <button  class="btn btn-success">Ver Reserva &nbsp; <i class="far fa-eye"></i></button>
+        </div>
+      </div>
+      <div style="border: solid 3px green;height: auto;" class="tarjeta">
+        <div class="letra">
+          <p style="padding-top: 6px;">Cuisin Electro</p>
+        </div>
+        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+        </div>
+        <div class="botones">
+          <button  class="btn btn-success">Ver Reserva &nbsp; <i class="far fa-eye"></i></button>
+        </div>
+      </div>
+      <div style="border: solid 3px green;height: auto;" class="tarjeta">
+        <div class="letra">
+          <p style="padding-top: 6px;">Optimasit</p>
+        </div>
+        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+        </div>
+        <div class="botones">
+          <button  class="btn btn-success">Ver Reserva &nbsp; <i class="far fa-eye"></i></button>
+        </div>
+      </div>
+      <div style="border: solid 3px green;height: auto;" class="tarjeta">
+        <div class="letra">
+          <p style="padding-top: 6px;">Heaven Beach Club</p>
+        </div>
+        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+        </div>
+        <div class="botones">
+          <button  class="btn btn-success">Ver Reserva &nbsp; <i class="far fa-eye"></i></button>
+        </div>
+      </div>
+      <div style="border: solid 3px green;height: auto;" class="tarjeta">
+        <div class="letra">
+          <p style="padding-top: 6px;">Estrella Dawn</p>
+        </div>
+        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+        </div>
+        <div class="botones">
+          <button  class="btn btn-success">Ver Reserva &nbsp; <i class="far fa-eye"></i></button>
+        </div>
+      </div>
   </div>
-  <div class="col-md-12  cabecera" style="display: flex">
-    <h4>Listado de reservas</h4> &nbsp; &nbsp; &nbsp;
-    
-  </div>
-  <br>
-  <div class="col-md-12 cabecera">
-    <table class="table table-bordered table-striped">
-      <tr>
-        <th>Nombre</th>
-        <th>Apellidos</th>
-        <th>F.Entrada</th>
-        <th>F.Salida</th>
-        <th>Pagado</th>
-        <th>Funciones</th>
-      </tr>
-      <tr>
-        <td>Alberto</td>
-        <td>Sánchez</td>
-        <td>25/03/2018 12:30</td>
-        <td>25/03/2018 13:30</td>
-        <td>si</td>
-        <td>
-          <button routerLink="/editar-reservas" class="btn btn-primary">
-            <i class="fas fa-pencil-alt"></i>
-          </button> &nbsp;
-          <!-- Button trigger modal -->
-          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-            <i class="fas fa-trash-alt"></i>
-          </button>
-  
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Eliminar Jugador</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                 ¿Realmente desea eliminar al jugador?
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-primary">Eliminar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </td>
-      </tr>
-  
-      <!-- <tr *ngFor="let proveedor of proveedores">
-          <td>{{proveedor.nombre}}</td>
-          <td>{{proveedor.cif}}</td>
-          <td>{{proveedor.localidad}}</td>
-        </tr> -->
-    </table>
-  </div>
+
+</div>

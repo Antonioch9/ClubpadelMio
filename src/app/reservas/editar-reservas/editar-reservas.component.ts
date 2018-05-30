@@ -6,6 +6,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
   templateUrl: './editar-reservas.component.html',
   styleUrls: ['./editar-reservas.component.css']
 })
+
 export class EditarReservasComponent implements OnInit {
 
   constructor( ) { }
