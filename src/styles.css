@@ -143,11 +143,12 @@
     z-index: 100;
 }
 .tarjeta:hover{
-  background-color: rgba(0, 0, 0, 0.563);
+  background-color: rgba(172, 255, 47, 0.357);
+  transition: 800ms ease-in-out;
 }
 .foto{
   position: relative;
-  z-index: -200;
+  
 }
 .barra{
     position: fixed;
@@ -184,7 +185,7 @@ label{
 }
 
 .jugador:hover{
-    z-index: 100;
+    
     background-color: black;
 }
 .grafica{
@@ -193,11 +194,6 @@ label{
   
 }
 
-select .form-control:not([size]):not([multiple]) {
-
-height:none ;
-
-}
 
 a{
   color: white !important;

@@ -16,7 +16,7 @@
           <a routerLink="/listado-jugador">Jugadores</a>
         </li>
         <li>
-          <a routerLink="/listado-reservas">Listado de Reservas</a>
+          <a routerLink="/listado-reservass">Listado de Reservass</a>
         </li>
         <li>
           <a routerLink="/graficas">Estadisticas</a>
@@ -49,123 +49,13 @@
         <li class="breadcrumb-item">
           <a class="enlace" routerLink="/" [routerLinkActive]="['router-link-active']">Inicio</a>
         </li>
-        <li class="breadcrumb-item active" aria-current="page">Lista de Reservas</li>
+        <li class="breadcrumb-item active" aria-current="page">Lista de Reservass</li>
       </ol>
     </nav>
   </div>
 </div>
 <div class="col-md-12  cabecera" style="display: flex">
-  <h4>Listado de reservas</h4> &nbsp; &nbsp; &nbsp;
+  <h4>Listado de reservass</h4> &nbsp; &nbsp; &nbsp;
 
 </div>
 <br>
-<div style="display: flex; position: absolute; ">
-  <div style="padding-left: 300px; display: flex; flex-direction: row; justify-content: space-around; width: 85%;flex-wrap: wrap; overflow: auto;padding-top: 30px;">
-      <div style="border: solid 3px green;height: auto;" class="tarjeta">
-
-        <!-- <input type="date" name="fechaEntrada" class="form-control" ngModel >
-                <input type="date" name="fechaSalida" class="form-control" ngModel >
-                <button  type="submit"  class="btn btn-success">Ver Reserva</button> -->
-
-        <div class="letra">
-          <p style="padding-top: 6px;">My Guide Marbella</p>
-        </div>
-        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" class="foto" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-        </div>
-        <div class="botones">
-          <button  class="btn btn-success">Ver Reserva &nbsp; <i class="far fa-eye"></i> </button>
-        </div>
-      </div>
-      <div style="border: solid 3px green;height: auto" class="tarjeta">
-        <div class="letra">
-          <p style="padding-top: 6px;">La habana</p>
-        </div>
-        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-        </div>
-        <div class="botones">
-          <button  class="btn btn-success">Ver Reserva &nbsp; <i class="far fa-eye"></i></button>
-        </div>
-      </div>
-      <div style="border: solid 3px green;height: auto;" class="tarjeta">
-        <div class="letra">
-          <p style="padding-top: 6px;">Royale Grass</p>
-        </div>
-        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-        </div>
-        <div class="botones">
-          <button  class="btn btn-success">Ver Reserva &nbsp; <i class="far fa-eye"></i></button>
-        </div>
-      </div>
-      <div style="border: solid 3px green;height: auto;" class="tarjeta">
-        <div class="letra">
-          <p style="padding-top: 6px;">Da Bruno</p>
-        </div>
-        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-        </div>
-        <div class="botones">
-          <button  class="btn btn-success">Ver Reserva &nbsp; <i class="far fa-eye"></i></button>
-        </div>
-      </div>
-      <div style="border: solid 3px green;height: auto;" class="tarjeta">
-        <div class="letra">
-          <p style="padding-top: 6px;">Fanautic Club</p>
-        </div>
-        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-        </div>
-        <div class="botones">
-          <button  class="btn btn-success">Ver Reserva &nbsp; <i class="far fa-eye"></i></button>
-        </div>
-      </div>
-      <div style="border: solid 3px green;height: auto;" class="tarjeta">
-        <div class="letra">
-          <p style="padding-top: 6px;">X-Magazine</p>
-        </div>
-        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-        </div>
-        <div class="botones">
-          <button  class="btn btn-success">Ver Reserva &nbsp; <i class="far fa-eye"></i></button>
-        </div>
-      </div>
-      <div style="border: solid 3px green;height: auto;" class="tarjeta">
-        <div class="letra">
-          <p style="padding-top: 6px;">Cuisin Electro</p>
-        </div>
-        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-        </div>
-        <div class="botones">
-          <button  class="btn btn-success">Ver Reserva &nbsp; <i class="far fa-eye"></i></button>
-        </div>
-      </div>
-      <div style="border: solid 3px green;height: auto;" class="tarjeta">
-        <div class="letra">
-          <p style="padding-top: 6px;">Optimasit</p>
-        </div>
-        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-        </div>
-        <div class="botones">
-          <button  class="btn btn-success">Ver Reserva &nbsp; <i class="far fa-eye"></i></button>
-        </div>
-      </div>
-      <div style="border: solid 3px green;height: auto;" class="tarjeta">
-        <div class="letra">
-          <p style="padding-top: 6px;">Heaven Beach Club</p>
-        </div>
-        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-        </div>
-        <div class="botones">
-          <button  class="btn btn-success">Ver Reserva &nbsp; <i class="far fa-eye"></i></button>
-        </div>
-      </div>
-      <div style="border: solid 3px green;height: auto;" class="tarjeta">
-        <div class="letra">
-          <p style="padding-top: 6px;">Estrella Dawn</p>
-        </div>
-        <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-        </div>
-        <div class="botones">
-          <button  class="btn btn-success">Ver Reserva &nbsp; <i class="far fa-eye"></i></button>
-        </div>
-      </div>
-  </div>
-
-</div>

@@ -3,14 +3,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
-
-
+import { BsDatepickerModule } from 'ngx-bootstrap';
 
 // import * as $ from 'jquery';
 import { DndModule } from 'ng2-dnd';
-
 
 import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
@@ -24,6 +20,7 @@ import { EditarReservasComponent } from './reservas/editar-reservas/editar-reser
 import { GraficasComponent } from './estadisticas/graficas/graficas.component';
 
 
+
 const rutas: Routes = [
   { path: '', component: InicioComponent },
   { path: 'nuevo-jugador', component: NuevoJugadorComponent },
@@ -32,7 +29,8 @@ const rutas: Routes = [
   { path: 'nueva-reservas', component: NuevaReservaComponent },
   { path: 'listado-reservas', component: ListadoReservasComponent },
   { path: 'editar-reservas', component: EditarReservasComponent },
-  { path: 'graficas', component: GraficasComponent }
+  { path: 'graficas', component: GraficasComponent },
+  
 ]
 @NgModule({
   declarations: [
@@ -45,11 +43,13 @@ const rutas: Routes = [
     ListadoReservasComponent,
     EditarReservasComponent,
     GraficasComponent,
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    BsDatepickerModule.forRoot(),
     DndModule.forRoot(),
     RouterModule.forRoot(rutas)
   ],

@@ -1,28 +1,27 @@
 <div class="global">
-<div id="wrapper" class="toggled">
+    <div id="wrapper" class="toggled">
 
-  <!-- Sidebar -->
-  <div id="sidebar-wrapper">
-      <ul class="sidebar-nav">
-          <li class="sidebar-brand">
-              <a routerLink="/">
-                <img src="../../../assets/img/logowebpeq2.png" style="width: 30px;height: 30px;" alt=""> &nbsp;
-                  Padel Marbella
-              </a>
-          </li>
-          <li>
-              <a routerLink="/">Home</a>
-          </li>
-          <li>
-              <a routerLink="/listado-jugador">Jugadores</a>
-          </li>
-          <li>
-              <a routerLink="/listado-reservas">Listado de Reservas</a>
-          </li>
-           <li>
-              <a routerLink="/graficas">Estadisticas</a>
-          </li>
-          <!--<li>
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a routerLink="/">
+                        <img src="../../../assets/img/logowebpeq2.png" style="width: 30px;height: 30px;" alt=""> &nbsp; Padel Marbella
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/">Home</a>
+                </li>
+                <li>
+                    <a routerLink="/listado-jugador">Jugadores</a>
+                </li>
+                <li>
+                    <a routerLink="/listado-reservas">Listado de Reservas</a>
+                </li>
+                <li>
+                    <a routerLink="/graficas">Estadisticas</a>
+                </li>
+                <!--<li>
               <a href="#">About</a>
           </li>
           <li>
@@ -31,564 +30,512 @@
           <li>
               <a href="#">Contact</a>
           </li> -->
-      </ul>
-  </div>
-</div>
-<div class="cabecera">
-  <nav class="navbar navbar-expand-md navbar-black bg-black mb-4 " style="background-color: #000;color: #999999; height: 50px;margin-left: -10px;">
-    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      
+            </ul>
+        </div>
     </div>
-  </nav>
-  <nav class="migas" aria-label="breadcrumb">
-      <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-              <a class="enlace" routerLink="/" >Inicio</a>
-          </li>
-      </ol>
-  </nav>
-  
+    <div class="cabecera">
+        <nav class="navbar navbar-expand-md navbar-black bg-black mb-4 " style="background-color: #000;color: #999999; height: 50px;margin-left: -10px;">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+
+            </div>
+        </nav>
+        <nav class="migas" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a class="enlace" routerLink="/">Inicio</a>
+                </li>
+            </ol>
+        </nav>
+
+    </div>
 </div>
-</div>
-<div style="display: flex; position: absolute;">
+
+<div style="display: flex;flex-direction: column; position: absolute;">
+    <div class="buscador">
+        <div class="contenido">
+            <h4> Ver Pistas reservadas:</h4>
+        </div>
+        <div class="row buscar">
+            <strong>Fecha:</strong>
+            <input type="text"  bsDatepicker class="form-control peque">
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <label for="horario">Horarios</label>
+            <select class="form-control hora" name="horario" ngModel>
+                <option *ngFor="let horario of horarios" [value]="horario">
+                    {{horario}}
+                </option>
+            </select>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <button class="btn btn-secondary"><i class="fas fa-search"></i></button>
+        </div>
     
+    
+    
+    </div>
     <div style="padding-left: 300px; display: flex; flex-direction: row; justify-content: space-around; width: 75%;flex-wrap: wrap;">
 
 
-            <form  #formRese="ngForm"  >
-        <div style="border: solid 3px green;height: auto;" class="tarjeta">
-            
+        <form #formRese="ngForm">
+            <div style="border: solid 5px green;height: auto;" class="tarjeta">
+
                 <!-- <input type="date" name="fechaEntrada" class="form-control" ngModel >
                 <input type="date" name="fechaSalida" class="form-control" ngModel >
                 <button  type="submit"  class="btn btn-success">reservar</button> -->
-            <div class="letra">
-                <p [(ngModel)]="titulo.p1" name="titulo" >{{titulo.p1}}</p>
-            </div>
-            <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div   class="jugador" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-
-            </div>
-            <div class="fechas">
-                    <label for="horario">Horarios</label>
-                    <select class="form-control" name="horario" ngModel>
-                      <option *ngFor="let horario of horarios" [value]="horario">
-                        {{horario}}
-                      </option>
-                    </select>
-                    <br>
-                <div class="input-group mb-2">
-                    <div class="input-group-prepend medio ">
-                        <label class="input-group-text " for="inputGroupSelect01">Entrada</label>
-                    </div>
-                </div>
-                <input type="date" name="fechaEntrada" class="form-control" ngModel >
-                <br>
-                <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend medio">
-                        <label class="input-group-text" for="inputGroupSelect01">Salida</label>
-                    </div>
-                </div>
-                <input type="date" name="fechaSalida" class="form-control" ngModel >
-            </div>
-            <div class="botones">
-                <button  (click)="guardarReserva()"  class="btn btn-success">reservar</button>
-            </div>
-        </div>
-    </form>
-
-    <form  #formReser="ngForm"  >
-
-        <div style="border: solid 3px green;height: auto;" class="tarjeta">
-            <div class="letra">
-                <p [(ngModel)]="titulo.p2" name="titulo">{{titulo.p2}}</p>
-            </div>
-            <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-
-            </div>
-            <div class="fechas">
-                    <label for="horario">Horarios</label>
-                    <select class="form-control" name="horario" ngModel>
-                      <option *ngFor="let horario of horarios" [value]="horario">
-                        {{horario}}
-                      </option>
-                    </select>
-                    <div class="input-group mb-2 centrado">
-                        <div class="input-group-prepend medio ">
-                            <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
-                        </div>
-                    </div>
-                    <input type="date" name="fechaEntrada" class="form-control" ngModel >
-                    <br>
-                    <div class="input-group mb-2 centrado">
-                        <div class="input-group-prepend medio">
-                            <label class="input-group-text" for="inputGroupSelect01">Salida</label>
-                        </div>
-                    </div>
-                    <input type="date" name="fechaSalida" class="form-control" ngModel >
-    
-                </div>
-
-            <div class="botones">
-                <button (click)="guardarReservar()" class="btn btn-success">reservar</button>
-            </div>
-        </div>
-    </form>
-
-
-    <form  #formReserv="ngForm"  >
-
-        <div style="border: solid 3px green;height: auto;" class="tarjeta">
-            <div class="letra">
-                    <p [(ngModel)]="titulo.p3" name="titulo">{{titulo.p3}}</p>
-            </div>
-            <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-
-            </div>
-            <div class="fechas">
-                    <label for="horario">Horarios</label>
-                    <select class="form-control" name="horario" ngModel>
-                      <option *ngFor="let horario of horarios" [value]="horario">
-                        {{horario}}
-                      </option>
-                    </select>
-                <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend medio ">
-                        <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
-                    </div>
-                </div>
-                <input type="date" name="fechaEntrada" class="form-control" ngModel >
-                <br>
-                <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend medio">
-                        <label class="input-group-text" for="inputGroupSelect01">Salida</label>
-                    </div>
-                </div>
-                <input type="date" name="fechaSalida" class="form-control" ngModel >
-
-            </div>
-
-            <div class="botones">
-                    <button (click)="guardarReservar3()" class="btn btn-success">reservar</button>
-            </div>
-        </div>
-
-    </form>
-    <form  #formReserva="ngForm">
-        <div style="border: solid 3px green;height: auto;" class="tarjeta">
-            <div class="letra">
-                <p [(ngModel)]="titulo.p4" name="titulo" >{{titulo.p4}}</p>
-            </div>
-            <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-
-            </div>
-            <div class="fechas">
-                    <label for="horario">Horarios</label>
-                    <select class="form-control" name="horario" ngModel>
-                      <option *ngFor="let horario of horarios" [value]="horario">
-                        {{horario}}
-                      </option>
-                    </select>
-                <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend medio ">
-                        <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
-                    </div>
-                </div>
-                <input type="date" name="fechaEntrada" class="form-control" ngModel >
-                <br>
-                <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend medio">
-                        <label class="input-group-text" for="inputGroupSelect01">Salida</label>
-                    </div>
-                </div>
-                <input type="date" name="fechaSalida" class="form-control" ngModel >
-
-            </div>
-
-            <div class="botones">
-                    <button (click)="guardarReservar4()" class="btn btn-success">reservar</button>
-            </div>
-        </div>
-    </form>
-    <form  #formReserva5="ngForm">
-
-        <div style="border: solid 3px green;height: auto;" class="tarjeta">
-            <div class="letra">
-                <p [(ngModel)]="titulo.p5" name="titulo">{{titulo.p5}}</p>
-            </div>
-            <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-
-            </div>
-            <div class="fechas">
-                    <label for="horario">Horarios</label>
-                    <select class="form-control" name="horario" ngModel>
-                      <option *ngFor="let horario of horarios" [value]="horario">
-                        {{horario}}
-                      </option>
-                    </select>
-                <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend medio ">
-                        <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
-                    </div>
-                </div>
-                <input type="date" name="fechaEntrada" class="form-control" ngModel >
-                <br>
-                <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend medio">
-                        <label class="input-group-text" for="inputGroupSelect01">Salida</label>
-                    </div>
-                </div>
-                <input type="date" name="fechaSalida" class="form-control" ngModel >
-
-            </div>
-
-            <div class="botones">
-                <button (click)="guardarReservar5()" class="btn btn-success">reservar</button>
-            </div>
-        </div>
-    </form>
-    <form  #formReserva6="ngForm">
-        <div style="border: solid 3px green;height: auto;" class="tarjeta">
-            <div class="letra">
-                <p [(ngModel)]="titulo.p6" name="titulo"  >{{titulo.p6}}</p>
-            </div>
-            <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-
-            </div>
-            <div class="fechas">
-                    <label for="horario">Horarios</label>
-                    <select class="form-control" name="horario" ngModel>
-                      <option *ngFor="let horario of horarios" [value]="horario">
-                        {{horario}}
-                      </option>
-                    </select>
-                <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend medio ">
-                        <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
-                    </div>
-                </div>
-                <input type="date" name="fechaEntrada" class="form-control" ngModel >
-                <br>
-                <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend medio">
-                        <label class="input-group-text" for="inputGroupSelect01">Salida</label>
-                    </div>
-                </div>
-                <input type="date" name="fechaSalida" class="form-control" ngModel >
-
-            </div>
-
-            <div class="botones">
-                <button (click)="guardarReservar6()" class="btn btn-success">reservar</button>
-            </div>
-        </div>
-    </form>
-    <form  #formReserva7="ngForm">
-        <div style="border: solid 3px green;height: auto;" class="tarjeta">
-            <div class="letra">
-                <p [(ngModel)]="titulo.p7" name="titulo" >{{titulo.p7}}</p>
-            </div>
-            <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-                <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-
-                </div>
-
-            </div>
-            <div class="fechas">
-                    <label for="horario">Horarios</label>
-                    <select class="form-control" name="horario" ngModel>
-                      <option *ngFor="let horario of horarios" [value]="horario">
-                        {{horario}}
-                      </option>
-                    </select>
-                <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend medio ">
-                        <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
-                    </div>
-                </div>
-                <input type="date" name="fechaEntrada" class="form-control" ngModel >
-                <br>
-                <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend medio">
-                        <label class="input-group-text" for="inputGroupSelect01">Salida</label>
-                    </div>
-                </div>
-                <input type="date" name="fechaSalida" class="form-control" ngModel >
-
-            </div>
-
-            <div class="botones">
-                <button (click)="guardarReservar7()" class="btn btn-success">reservar</button>
-            </div>
-        </div>
-    </form>
-    <form  #formReserva8="ngForm">
-        <div style="border: solid 3px green;height: auto;" class="tarjeta">
                 <div class="letra">
-                    <p [(ngModel)]="titulo.p8" name="titulo" >{{titulo.p8}}</p>
+                    <p [(ngModel)]="titulo.p1" name="titulo">{{titulo.p1}}</p>
                 </div>
                 <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                    <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-    
+                    <div class="jugador" style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
                     </div>
-                    <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-    
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
                     </div>
-                    <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-    
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
                     </div>
-                    <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-    
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
                     </div>
-    
+
                 </div>
-            <div class="fechas">
+                <div class="fechas">
                     <label for="horario">Horarios</label>
-                    <select class="form-control" name="horario" ngModel>
-                      <option *ngFor="let horario of horarios" [value]="horario">
-                        {{horario}}
-                      </option>
+                    <select class="form-control borde" name="horario" ngModel>
+                        <option *ngFor="let horario of horarios" [value]="horario">
+                            {{horario}}
+                        </option>
                     </select>
-                <div class="input-group mb-2 centrado">
-                    <div class="input-group-prepend medio " >
-                        <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
+                    <br>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend medio ">
+                            <label class="input-group-text " for="inputGroupSelect01">Día</label>
+                        </div>
+                    </div>
+                    <input type="text"  bsDatepicker name="fechaEntrada" class="form-control verde" ngModel>
+                </div>
+                <div class="botones">
+                    <button (click)="guardarReserva()" class="btn btn-success">reservar</button>
+                </div>
+            </div>
+        </form>
+
+        <form #formReser="ngForm">
+
+            <div style="border: solid 5px green;height: auto;" class="tarjeta">
+                <div class="letra">
+                    <p [(ngModel)]="titulo.p2" name="titulo">{{titulo.p2}}</p>
+                </div>
+                <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+
+                </div>
+                <div class="fechas">
+                    <label for="horario">Horarios</label>
+                    <select class="form-control borde" name="horario" ngModel>
+                        <option *ngFor="let horario of horarios" [value]="horario">
+                            {{horario}}
+                        </option>
+                    </select>
+                    <br>
+                    <div class="input-group mb-2 centrado">
+                        <div class="input-group-prepend medio ">
+                            <label class="input-group-text" for="inputGroupSelect01">Día</label>
+                        </div>
+                    </div>
+                    <input type="text"  bsDatepicker name="fechaEntrada" class="form-control verde" ngModel>
+                </div>
+
+                <div class="botones">
+                    <button (click)="guardarReservar()" class="btn btn-success">reservar</button>
+                </div>
+            </div>
+        </form>
+        <form #formReserv="ngForm">
+
+            <div style="border: solid 5px green;height: auto;" class="tarjeta">
+                <div class="letra">
+                    <p [(ngModel)]="titulo.p3" name="titulo">{{titulo.p3}}</p>
+                </div>
+                <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
                     </div>
                 </div>
-                <input type="date" name="fechaEntrada" class="form-control" ngModel >
-                <br>
+                <div class="fechas">
+                    <label for="horario">Horarios</label>
+                    <select class="form-control borde" name="horario" ngModel>
+                        <option *ngFor="let horario of horarios" [value]="horario">
+                            {{horario}}
+                        </option>
+                    </select>
+                    <br>
                     <div class="input-group mb-2 centrado">
-                            <div class="input-group-prepend medio">
-                                <label class="input-group-text" for="inputGroupSelect01">Salida</label>
-                            </div>
+                        <div class="input-group-prepend medio ">
+                            <label class="input-group-text" for="inputGroupSelect01">Día</label>
                         </div>
-                        <input type="date" name="fechaSalida" class="form-control" ngModel >
-                        
+                    </div>
+                    <input type="text"  bsDatepicker name="fechaEntrada" class="form-control verde" ngModel>
+                </div>
+                <div class="botones">
+                    <button (click)="guardarReservar3()" class="btn btn-success">reservar</button>
+                </div>
             </div>
-                
+        </form>
+        <form #formReserva="ngForm">
+            <div style="border: solid 5px green;height: auto;" class="tarjeta">
+                <div class="letra">
+                    <p [(ngModel)]="titulo.p4" name="titulo">{{titulo.p4}}</p>
+                </div>
+                <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+
+                </div>
+                <div class="fechas">
+                    <label for="horario">Horarios</label>
+                    <select class="form-control borde" name="horario" ngModel>
+                        <option *ngFor="let horario of horarios" [value]="horario">
+                            {{horario}}
+                        </option>
+                    </select>
+                    <br>
+                    <div class="input-group mb-2 centrado">
+                        <div class="input-group-prepend medio ">
+                            <label class="input-group-text" for="inputGroupSelect01">Día</label>
+                        </div>
+                    </div>
+                    <input type="text"  bsDatepicker name="fechaEntrada" class="form-control verde" ngModel>
+                </div>
+                <div class="botones">
+                    <button (click)="guardarReservar4()" class="btn btn-success">reservar</button>
+                </div>
+            </div>
+        </form>
+        <form #formReserva5="ngForm">
+            <div style="border: solid 5px green;height: auto;" class="tarjeta">
+                <div class="letra">
+                    <p [(ngModel)]="titulo.p5" name="titulo">{{titulo.p5}}</p>
+                </div>
+                <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                </div>
+                <div class="fechas">
+                    <label for="horario">Horarios</label>
+                    <select class="form-control borde" name="horario" ngModel>
+                        <option *ngFor="let horario of horarios" [value]="horario">
+                            {{horario}}
+                        </option>
+                    </select>
+                    <br>
+                    <div class="input-group mb-2 centrado">
+                        <div class="input-group-prepend medio ">
+                            <label class="input-group-text" for="inputGroupSelect01">Día</label>
+                        </div>
+                    </div>
+                    <input type="text"  bsDatepicker name="fechaEntrada" class="form-control verde" ngModel>
+                </div>
+                <div class="botones">
+                    <button (click)="guardarReservar5()" class="btn btn-success">reservar</button>
+                </div>
+            </div>
+        </form>
+        <form #formReserva6="ngForm">
+            <div style="border: solid 5px green;height: auto;" class="tarjeta">
+                <div class="letra">
+                    <p [(ngModel)]="titulo.p6" name="titulo">{{titulo.p6}}</p>
+                </div>
+                <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+
+                </div>
+                <div class="fechas">
+                    <label for="horario">Horarios</label>
+                    <select class="form-control borde" name="horario" ngModel>
+                        <option *ngFor="let horario of horarios" [value]="horario">
+                            {{horario}}
+                        </option>
+                    </select>
+                    <br>
+                    <div class="input-group mb-2 centrado">
+                        <div class="input-group-prepend medio ">
+                            <label class="input-group-text" for="inputGroupSelect01">Día</label>
+                        </div>
+                    </div>
+                    <input type="text"  bsDatepicker name="fechaEntrada" class="form-control verde" ngModel>
+                </div>
+                <div class="botones">
+                    <button (click)="guardarReservar6()" class="btn btn-success">reservar</button>
+                </div>
+            </div>
+        </form>
+        <form #formReserva7="ngForm">
+            <div style="border: solid 5px green;height: auto;" class="tarjeta">
+                <div class="letra">
+                    <p [(ngModel)]="titulo.p7" name="titulo">{{titulo.p7}}</p>
+                </div>
+                <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                </div>
+                <div class="fechas">
+                    <label for="horario">Horarios</label>
+                    <select class="form-control borde" name="horario" ngModel>
+                        <option *ngFor="let horario of horarios" [value]="horario">
+                            {{horario}}
+                        </option>
+                    </select>
+                    <br>
+                    <div class="input-group mb-2 centrado">
+                        <div class="input-group-prepend medio ">
+                            <label class="input-group-text" for="inputGroupSelect01">Día</label>
+                        </div>
+                    </div>
+                    <input type="text"  bsDatepicker name="fechaEntrada" class="form-control verde" ngModel>
+                </div>
+                <div class="botones">
+                    <button (click)="guardarReservar7()" class="btn btn-success">reservar</button>
+                </div>
+            </div>
+        </form>
+        <form #formReserva8="ngForm">
+            <div style="border: solid 5px green;height: auto;" class="tarjeta">
+                <div class="letra">
+                    <p [(ngModel)]="titulo.p8" name="titulo">{{titulo.p8}}</p>
+                </div>
+                <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+                    </div>
+                </div>
+                <div class="fechas">
+                    <label for="horario">Horarios</label>
+                    <select class="form-control borde" name="horario" ngModel>
+                        <option *ngFor="let horario of horarios" [value]="horario">
+                            {{horario}}
+                        </option>
+                    </select>
+                    <br>
+                    <div class="input-group mb-2 centrado">
+                        <div class="input-group-prepend medio ">
+                            <label class="input-group-text" for="inputGroupSelect01">Día</label>
+                        </div>
+                    </div>
+                    <input type="text"  bsDatepicker name="fechaEntrada" class="form-control verde" ngModel>
+                </div>
                 <div class="botones">
                     <button (click)="guardarReservar8()" class="btn btn-success">reservar</button>
                 </div>
             </div>
         </form>
-        <form  #formReserva9="ngForm">
-            <div style="border: solid 3px green;height: auto;" class="tarjeta">
-                    <div class="letra">
-                        <p [(ngModel)]="titulo.p9" name="titulo" >{{titulo.p9}}</p>
-                    </div>
-                    <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                        <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-        
-                        </div>
-                        <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-        
-                        </div>
-                        <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-        
-                        </div>
-                        <div   style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-        
-                        </div>
-        
-                    </div>
-                <div class="fechas">
-                        <label for="horario">Horarios</label>
-                        <select class="form-control" name="horario" ngModel>
-                          <option *ngFor="let horario of horarios" [value]="horario">
-                            {{horario}}
-                          </option>
-                        </select>
-                    <div class="input-group mb-2 centrado">
-                        <div class="input-group-prepend medio " >
-                            <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
-                        </div>
-                    </div>
-                    <input type="date" name="fechaEntrada" class="form-control" ngModel >
-                    <br>
-                        <div class="input-group mb-2 centrado">
-                                <div class="input-group-prepend medio">
-                                    <label class="input-group-text" for="inputGroupSelect01">Salida</label>
-                                </div>
-                            </div>
-                            <input type="date" name="fechaSalida" class="form-control" ngModel >
-                            
+        <form #formReserva9="ngForm">
+            <div style="border: solid 5px green;height: auto;" class="tarjeta">
+                <div class="letra">
+                    <p [(ngModel)]="titulo.p9" name="titulo">{{titulo.p9}}</p>
                 </div>
-                    
-                    <div class="botones">
-                        <button (click)="guardarReservar9()" class="btn btn-success">reservar</button>
-                    </div>
-                </div>
-            </form>
-            <form  #formReserva10="ngForm">
-                <div style="border: solid 3px green;height: auto;" class="tarjeta">
-                        <div class="letra">
-                            <p [(ngModel)]="titulo.p10" name="titulo">{{titulo.p10}}</p>
-                        </div>
-                        <div  dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
-                            <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-            
-                            </div>
-                            <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-            
-                            </div>
-                            <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-            
-                            </div>
-                            <div  style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
-            
-                            </div>
-            
-                        </div>
-                    <div class="fechas">
-                            <label for="horario">Horarios</label>
-                            <select class="form-control" name="horario" ngModel>
-                              <option *ngFor="let horario of horarios" [value]="horario">
-                                {{horario}}
-                              </option>
-                            </select>
-                        <div class="input-group mb-2 centrado">
-                            <div class="input-group-prepend medio " >
-                                <label class="input-group-text" for="inputGroupSelect01">Entrada</label>
-                            </div>
-                        </div>
-                        <input type="date" name="fechaEntrada" class="form-control" ngModel >
-                        <br>
-                            <div class="input-group mb-2 centrado">
-                                    <div class="input-group-prepend medio">
-                                        <label class="input-group-text" for="inputGroupSelect01">Salida</label>
-                                    </div>
-                                </div>
-                                <input type="date" name="fechaSalida" class="form-control" ngModel >
-                                
-                    </div>
-                        
-                        <div class="botones">
-                            <button (click)="guardarReservar10()" class="btn btn-success">reservar</button>
-                        </div>
-                    </div>
-                </form>
-    </div>
+                <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
 
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                </div>
+                <div class="fechas">
+                    <label for="horario">Horarios</label>
+                    <select class="form-control borde" name="horario" ngModel>
+                        <option *ngFor="let horario of horarios" [value]="horario">
+                            {{horario}}
+                        </option>
+                    </select>
+                    <br>
+                    <div class="input-group mb-2 centrado">
+                        <div class="input-group-prepend medio ">
+                            <label class="input-group-text" for="inputGroupSelect01">Día</label>
+                        </div>
+                    </div>
+                    <input type="text"  bsDatepicker name="fechaEntrada" class="form-control verde" ngModel>
+
+                </div>
+
+                <div class="botones">
+                    <button (click)="guardarReservar9()" class="btn btn-success">reservar</button>
+                </div>
+            </div>
+        </form>
+        <form #formReserva10="ngForm">
+            <div style="border: solid 5px green;height: auto;" class="tarjeta">
+                <div class="letra">
+                    <p [(ngModel)]="titulo.p10" name="titulo">{{titulo.p10}}</p>
+                </div>
+                <div dnd-droppable (onDropSuccess)="transferDataSuccess($event)" style="height:300px;width:180px ;background-image: url('../../assets/img/Sin título.png');margin: 20px;background-size: contain;background-repeat: no-repeat;justify-content: center">
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                    <div style="border: solid 1px black; width: 50%;height: 50%;display: inline-block;">
+
+                    </div>
+                </div>
+                <div class="fechas">
+                    <label for="horario">Horarios</label>
+                    <select class="form-control borde" name="horario" ngModel>
+                        <option *ngFor="let horario of horarios" [value]="horario">
+                            {{horario}}
+                        </option>
+                    </select>
+                    <br>
+                    <div class="input-group mb-2 centrado">
+                        <div class="input-group-prepend medio ">
+                            <label class="input-group-text" for="inputGroupSelect01">Día</label>
+                        </div>
+                    </div>
+                    <input type="text"  bsDatepicker name="fechaEntrada" class="form-control verde" ngModel>
+                </div>
+
+                <div class="botones">
+                    <button (click)="guardarReservar10()" class="btn btn-success">reservar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
     <div class="barra">
         <div style="flex-direction: column; align-items: flex-end">
             <div style="height: 10%; height: 100%;display: flex; flex-direction: column;align-content: flex-end">
-                <h4 style=" text-align:left;"> Listado de jugadores</h4> 
+                <h4 style=" text-align:left;"> Listado de jugadores</h4>
                 <div style="display: flex;padding-left: 20px;">
                     <input type="text">
                     <a class="btn btn-suscces">
                         <i class="fas fa-search"></i>
                     </a>
                 </div>
-                
+
 
             </div>
             <div style="overflow: auto; border: solid  1px black;background-color:#222;color: white; width:100%;height: 60vh;">
                 <ul style="list-style: none;margin-top: 20px;">
-                    <li   >
-                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/fotos-5x5-cm-visa-estados-unidos-eeuu-y-otros-6-fotos-carnet-D_NQ_NP_23142-MLA20241872874_022015-F.jpg" style="width:25px;height: 30px;" alt=""> Gloria Sánchez
+                    <li>
+                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/fotos-5x5-cm-visa-estados-unidos-eeuu-y-otros-6-fotos-carnet-D_NQ_NP_23142-MLA20241872874_022015-F.jpg"
+                            style="width:25px;height: 30px;" alt=""> Gloria Sánchez
                     </li>
                     <li>
-                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/520191091.jpg" style="width:25px;height: 30px;" alt=""> Alberto Sánchez
+                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/520191091.jpg" style="width:25px;height: 30px;"
+                            alt=""> Alberto Sánchez
                     </li>
                     <li>
-                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/foto-carnet (1).jpg" style="width:25px;height: 30px;" alt=""> Ronaldo Vivas
+                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/foto-carnet (1).jpg" style="width:25px;height: 30px;"
+                            alt=""> Ronaldo Vivas
                     </li>
                     <li>
-                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/descarga.jpg" style="width:25px;height: 30px;" alt=""> Luis Pérez
+                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/descarga.jpg" style="width:25px;height: 30px;"
+                            alt=""> Luis Pérez
                     </li>
                     <li>
-                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/rodriguez_juan_ramon_foto-carnet.jpg" style="width:25px;height: 30px;" alt=""> Sergio López
+                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/rodriguez_juan_ramon_foto-carnet.jpg"
+                            style="width:25px;height: 30px;" alt=""> Sergio López
                     </li>
                     <li>
-                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/526.jpg" style="width:25px;height: 30px;" alt=""> Juan Carlos Hernández
+                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/526.jpg" style="width:25px;height: 30px;"
+                            alt=""> Juan Carlos Hernández
                     </li>
                     <li>
-                        <img  dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/foto-carnet.jpg" style="width:25px;height: 30px;" alt=""> Amanda García
+                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/foto-carnet.jpg" style="width:25px;height: 30px;"
+                            alt=""> Amanda García
                     </li>
                     <li>
-                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/520191091.jpg" style="width:25px;height: 30px;" alt=""> Juan Ramon Pardo
+                        <img dnd-draggable [dragEnabled]="true" [dragData]="transferData" src="../../assets/img/520191091.jpg" style="width:25px;height: 30px;"
+                            alt=""> Juan Ramon Pardo
                     </li>
 
                 </ul>
@@ -596,6 +543,3 @@
 
         </div>
     </div>
-</div>
- 
-

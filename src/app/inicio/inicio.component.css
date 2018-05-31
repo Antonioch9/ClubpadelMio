@@ -1,4 +1,45 @@
 select{
-    height: 30px !important;
+    height:auto !important;
     width: auto;
+   
+}
+.buscador{
+    background-color: rgba(235, 235, 95, 0.309) !important;
+    height: 80px;
+    width: 60%;
+    display: flex;
+    text-align: center;
+    border: 2px solid rgb(208, 211, 4);
+    border-radius: 20px;
+    position: relative;
+    left: 15%;
+    margin-bottom: 50px;
+}
+.contenido{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    align-items:center ;
+    justify-content: center;
+    
+}
+.buscar{
+    width: 50%;
+    justify-content: end;
+    align-items:center ;
+    
+}
+.peque{
+    border:solid 2px rgb(172, 111, 111);
+    width: 35%;
+}
+.hora{
+    border:solid 2px rgb(172, 111, 111);
+}
+.verde{
+    border: 2px solid yellowgreen;
+    width: 50%;
+}
+.borde{
+    border: 2px solid yellowgreen;
 }
