@@ -59,14 +59,14 @@
   <div class="row">
     <div class="col-md-12 ">
       <div class="formulario">
-        <form [formGroup]="formJug" #formDato="ngForm" (ngSubmit)="guardarFormulario()">
+        <form  (ngSubmit)="guardarFormulario()">
           <div class="row">
             <div class="col">
               <h4>Datos del Jugador</h4>
               <div class="col-md-8 ">
                 <div class="form-group">
                   <label for="nombre">Nombre</label>
-                  <span *ngIf="formJug.controls.nombre.valid &&
+                  <!-- <span *ngIf="formJug.controls.nombre.valid &&
                         formJug.controls.nombre.dirty">
                     <i class="fas fa-check-circle valido"></i>
                   </span>
@@ -74,14 +74,14 @@
                           formJug.controls.nombre.touched">
                     <i class="fas fa-times-circle no-valido"></i>
                     El campo es obligatorio
-                  </span>
-                  <input type="text" class="form-control" placeholder="Nombre" name="nombre" formControlName="nombre">
+                  </span> -->
+                  <input type="text" class="form-control" placeholder="Nombre" name="nombre"  [(ngModel)]="item.nombre">
                 </div>
               </div>
               <div class="col-md-8">
                 <div class="form-group">
                   <label for="apellidos">Apellidos</label>
-                  <span *ngIf="formJug.controls.apellidos.valid &&
+                  <!-- <span *ngIf="formJug.controls.apellidos.valid &&
                         formJug.controls.apellidos.dirty">
                     <i class="fas fa-check-circle valido"></i>
                   </span>
@@ -89,14 +89,14 @@
                           formJug.controls.apellidos.touched">
                     <i class="fas fa-times-circle no-valido"></i>
                     El campo es obligatorio
-                  </span>
-                  <input type="text" class="form-control" placeholder="Apellidos" name="apellidos" formControlName="apellidos">
+                  </span> -->
+                  <input type="text" class="form-control" placeholder="Apellidos" name="apellidos"  [(ngModel)]="item.apellidos">
                 </div>
               </div>
               <div class="col-md-8">
                 <div class="form-group">
                   <label for="dni">DNI</label>
-                  <span *ngIf="formJug.controls.dni.valid &&
+                  <!-- <span *ngIf="formJug.controls.dni.valid &&
                         formJug.controls.dni.dirty">
                     <i class="fas fa-check-circle valido"></i>
                   </span>
@@ -110,14 +110,14 @@
                         formJug.value.dni">
                     <i class="fas fa-times-circle no-valido"></i>
                     El campo debe tener 9 caracteres
-                  </span>
-                  <input type="text" class="form-control" formControlName="dni" [(ngModel)]="formJug.value.dni" maxlength="9" placeholder="0000000X" name="dni" pattern="[A-Za-z0-9]+" >
+                  </span> -->
+                  <input type="text" class="form-control" placeholder="dni" name="dni"  [(ngModel)]="item.dni"  >
                 </div>
               </div>
               <div class="col-md-8">
                 <div class="form-group">
                   <label for="pasaporte">Pasaporte</label>
-                  <span *ngIf="formJug.controls.pasaporte.valid &&
+                  <!-- <span *ngIf="formJug.controls.pasaporte.valid &&
                         formJug.controls.pasaporte.dirty">
                     <i class="fas fa-check-circle valido"></i>
                   </span>
@@ -125,14 +125,14 @@
                           formJug.controls.pasaporte.touched">
                     <i class="fas fa-times-circle no-valido"></i>
                     El campo es obligatorio
-                  </span>
-                  <input type="text" class="form-control" [(ngModel)]="formJug.value.pasaporte" placeholder="pasaporte" formControlName="pasaporte" name="pasaporte" >
+                  </span> -->
+                  <input type="text" class="form-control" [(ngModel)]="item.pasaporte" placeholder="pasaporte"  name="pasaporte" >
                 </div>
               </div>
               <div class="col-md-8">
                 <div class="form-group">
                   <label for="nacionalidad">Nacionalidad</label>
-                  <select class="form-control" name="nacionalidad" formControlName="nacionalidad">
+                  <select class="form-control" name="nacionalidad" [(ngModel)]="item.nacionalidad" >
                     <option *ngFor="let nacionalidad of nacionalidades" [value]="nacionalidad">
                       {{nacionalidad}}
                     </option>
@@ -141,16 +141,16 @@
               </div>
             </div>
             <div class="col">
-              <form >
-                <input style="border: none" type="file" (change)="preview($event)" accept="image/">
+             
+                <input style="border: none" type="file" (change)="preview($event)" accept="image/"   name="foto">
                 <br>
                 
                 <canvas class="fondo"  #myCanvas style="width:300px; height: 300px;border: 1px solid red"></canvas>
-              </form>
+              
               <div class="row" style="margin-top: 30px;">
                 <div class="col-md-4">
                   <label for="nivel">Nivel de Juego</label>
-                  <select class="form-control" name="nivel" formControlName="nivel">
+                  <select class="form-control" name="nivel"  [(ngModel)]="item.nivel">
                     <option *ngFor="let nivel of niveles" [value]="nivel">
                       {{nivel}}
                     </option>
@@ -158,17 +158,17 @@
                 </div>
                 <div class="col-md-4">
                   <label for="id">Id</label>
-                  <input type="text" class="form-control" placeholder="id" name="id" formControlName="id">
+                  <input type="text" class="form-control" placeholder="id" name="id" [(ngModel)]="item.id">
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-4">
                   <label for="numeroTarjeta">Nº de tarjeta</label>
-                  <input type="number" class="form-control" placeholder="numero de Tarjeta" name="numeroTarjeta" formControlName="numeroTarjeta">
+                  <input type="number" class="form-control" placeholder="numero de Tarjeta" name="numeroTarjeta" [(ngModel)]="item.numeroTarjeta">
                 </div>
                 <div class="col-md-4">
                   <label for="numeroUsuario">Nº de Usuario</label>
-                  <input type="number" class="form-control" placeholder="Numero de Usuario" name="numeroUsuario" formControlName="numeroUsuario">
+                  <input type="number" class="form-control" placeholder="Numero de Usuario" name="numeroUsuario" [(ngModel)]="item.numeroUsuario">
                 </div>
               </div>
 
@@ -194,11 +194,11 @@
                   <p>
                     <strong>Servicios Disponibles </strong>
                   </p>
-                  <input type="checkbox" name="gimnasio" [(ngModel)]="marcable.gimnasio" > Socio Gimnasio
+                  <input type="checkbox" name="gimnasio"  > Socio Gimnasio
                   <br>
-                  <input type="checkbox" name="padel" [(ngModel)]="marcable.padel"> Socio Padel
+                  <input type="checkbox" name="padel" > Socio Padel
                   <br>
-                  <input type="checkbox" name="padelGimnasio" [(ngModel)]="marcable.padelGimnasio"> Socio Padel y Gimnasio
+                  <input type="checkbox" name="padelGimnasio" > Socio Padel y Gimnasio
                   <br>
                 </div>
               </form>
@@ -221,11 +221,11 @@
                     <p>
                       <strong>Servicios Disponibles </strong>
                     </p>
-                    <input type="checkbox" name="bonogimnasio" [(ngModel)]="marcable.bonogimnasio"> Bonos Gimnasio
+                    <input type="checkbox" name="bonogimnasio" > Bonos Gimnasio
                     <br>
-                    <input type="checkbox" name="bonomasaje"[(ngModel)]="marcable.bonomasaje"> Bono Masaje 1 hora
+                    <input type="checkbox" name="bonomasaje"> Bono Masaje 1 hora
                     <br>
-                    <input type="checkbox" name="bonopadel" [(ngModel)]="marcable.bonopadel"> Bono Padel
+                    <input type="checkbox" name="bonopadel" > Bono Padel
                     <br>
                   </form>
                 </div>
@@ -236,7 +236,7 @@
 
           <div style=" width: 100%">
             <div style="padding-left: 80%;display: inline;">
-              <button type="submit" [disabled]="formJug.invalid" class="btn btn-primary" (click)="seleccionar()" style="margin: 5px;">Añadir Datos</button>
+              <button type="submit" class="btn btn-primary" style="margin: 5px;">Añadir Datos</button>
               <button class="btn btn-danger" routerLink="/">Volver</button>
             </div>
 

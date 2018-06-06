@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { JugadoresService } from '../../servicios/jugadores.service';
 
 @Component({
   selector: 'app-nuevo-jugador',
@@ -35,102 +36,39 @@ export class NuevoJugadorComponent implements OnInit {
   niveles: String[] = [
     "Principiante", "Medio", " Alto",
   ]
-  @ViewChild('formDato') formDato: NgForm;
+  
   context: CanvasRenderingContext2D;
   @ViewChild("myCanvas") mycambas
 
-  //objeto para el checkbox
-  marcable = {
-    gimnasio: false,
-    padel: false,
-    padelGimnasio: false,
-    bonogimnasio:false,
-    bonomasaje:false,
-    bonopadel:false
-  }
-
-
-  //fin de objeto para el checkbox
+  
 
   jugador: any;
   dni: String;
+  item:any={
+    nombre:"",
+    apellidos: "",
+    dni: "",
+    pasaporte: "",
+    nacionalidad:"",
+    nivel: "",
+    id: "",
+    pagado:"",
+    numeroTarjeta: "",
+    numeroUsuario: "",
+  }
 
-  constructor(private fj: FormBuilder, ) {
-    this.jugador = {
-      nombre: null,
-      apellidos: null,
-      dni: null,
-      pasaporte: null,
-      nacionalidad: null,
-      nivel: null,
-      id: null,
-      numeroTarjeta: null,
-      numeroUsuario: null,
-      // gimnasio:false,
-      // padel:null,
-      // padelGimnasio:null
-
-    }
+  constructor( private jugadoresService:JugadoresService) {
+   
   }
 
   ngOnInit() {
-    this.iniciarFormulario()
+    
   }
-  seleccionar(){
-    console.log(this.marcable)
-  }
-  iniciarFormulario() {
-    this.formJug = this.fj.group({
-      nombre: [null, Validators.required],
-      apellidos: [null, Validators.required],
-      dni: ["", [Validators.required, Validators.minLength(9)]],
-      pasaporte: [null, Validators.required],
-      nacionalidad:[null,Validators.required],
-      nivel:[null,Validators.required],
-      id:[null,Validators.required],
-      numeroTarjeta:[null,Validators.required],
-      numeroUsuario:[null,Validators.required],
   
-    })
-    this.detectarCambios();
-  }
-  detectarCambios() {
-    this.formJug.valueChanges.subscribe(valorForm => {
-      // this.dni= valorForm.dni.starsWith('A')
-    })
-
-  }
-  // Metodo pra visualizar el precargado de la imagen
-  preview(e: any): void {
-    let canvas = this.mycambas.nativeElement;
-    let context = canvas.getContext('2d');
-    context.clearRect(0, 0, 300, 300)
-    var render = new FileReader();
-    render.onload = function (event) {
-      var img = new Image();
-      img.onload = function () {
-        canvas.width = img.width;
-        canvas.height = img.height;
-        context.drawImage(img, 0, 0)
-      };
-      // img.src= event.target.result;
-    }
-    render.readAsDataURL(e.target.files[0]);
-    console.log(this.preview)
-  }
-
-  guardarFormulario() {
-    this.jugador.nombre = this.formDato.value.nombre;
-    this.jugador.apellidos = this.formDato.value.apellidos;
-    this.jugador.dni = this.formDato.value.dni;
-    this.jugador.pasaporte = this.formDato.value.pasaporte;
-    this.jugador.nacionalidad = this.formDato.value.nacionalidad;
-    this.jugador.nivel = this.formDato.value.nivel;
-    this.jugador.id = this.formDato.value.id;
-    this.jugador.numeroTarjeta = this.formDato.value.numeroTarjeta;
-    this.jugador.numeroUsuario = this.formDato.value.numeroUsuario;
-    this.formDato.reset();
-    console.log(this.jugador)
+  guardarFormulario(){
+    console.log(this.item)
+    this.jugadoresService.postItem(this.item);
+    
   }
 
 }
